@@ -1,0 +1,40 @@
+name: Flutter Secure CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'  # Or your version
+
+      # Security: Dependency Vulnerability Check
+      - name: Check outdated and vulnerable dependencies
+        run: flutter pub outdated --mode=null-safety
+
+      # Security: Dart Static Analysis (SAST)
+      - name: Dart Static Analysis
+        run: flutter analyze
+
+      # Optional: Semgrep for deeper security scanning
+      - name: Semgrep Security Scan
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "p/ci"
+
+      # Tests
+      - name: Run Unit Tests
+        run: flutter test
+
+      # Build (optional, but shows full CI)
+      - name: Build application
+        run: flutter build apk --release
