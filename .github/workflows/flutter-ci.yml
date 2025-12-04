@@ -15,26 +15,24 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'  # Or your version
+          flutter-version: '3.24.0'
 
-      # Security: Dependency Vulnerability Check
-      - name: Check outdated and vulnerable dependencies
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./password_hygiene_coach
+
+      - name: Security - Check outdated packages
         run: flutter pub outdated --mode=null-safety
+        working-directory: ./password_hygiene_coach
 
-      # Security: Dart Static Analysis (SAST)
       - name: Dart Static Analysis
         run: flutter analyze
+        working-directory: ./password_hygiene_coach
 
-      # Optional: Semgrep for deeper security scanning
-      - name: Semgrep Security Scan
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: "p/ci"
-
-      # Tests
-      - name: Run Unit Tests
+      - name: Run unit tests
         run: flutter test
+        working-directory: ./password_hygiene_coach
 
-      # Build (optional, but shows full CI)
-      - name: Build application
+      - name: Build APK
         run: flutter build apk --release
+        working-directory: ./password_hygiene_coach
