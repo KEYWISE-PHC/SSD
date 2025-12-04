@@ -1,0 +1,2942 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:569b87ea-b9af-4554-84ca-2d63fa2c027b",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-12-04T12:15:28+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "manufacturer": {
+            "name": "Aqua Security Software Ltd."
+          },
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.67.2"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "83a8e370-fc90-4c3f-b913-cf00830d3e40",
+      "type": "application",
+      "name": ".",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "053703e7-a70a-4a5e-afa2-062720c097a6",
+      "type": "library",
+      "name": "path_provider_platform_interface",
+      "version": "2.1.2",
+      "purl": "pkg:pub/path_provider_platform_interface@2.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_platform_interface@2.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0624dcba-fa13-4eee-9853-b19b8d171a04",
+      "type": "library",
+      "name": "path",
+      "version": "1.9.1",
+      "purl": "pkg:pub/path@1.9.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path@1.9.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "06a3ce08-c635-4c6b-89b8-95cffd91525e",
+      "type": "library",
+      "name": "flutter_lints",
+      "version": "6.0.0",
+      "purl": "pkg:pub/flutter_lints@6.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter_lints@6.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "08339fb9-e45c-4a9f-ac00-f7c409d16a1d",
+      "type": "library",
+      "name": "term_glyph",
+      "version": "1.2.2",
+      "purl": "pkg:pub/term_glyph@1.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "term_glyph@1.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+      "type": "library",
+      "name": "flutter",
+      "version": "0.0.0",
+      "purl": "pkg:pub/flutter@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0af05c61-be14-4892-8eda-3347fa56ebee",
+      "type": "library",
+      "name": "collection",
+      "version": "1.19.1",
+      "purl": "pkg:pub/collection@1.19.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "collection@1.19.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0eef246f-fe59-46f2-ac3c-d843bc5efab4",
+      "type": "library",
+      "name": "stream_channel",
+      "version": "2.1.4",
+      "purl": "pkg:pub/stream_channel@2.1.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stream_channel@2.1.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "11b7ed01-1ac6-45c5-b129-bb728dda0205",
+      "type": "library",
+      "name": "source_span",
+      "version": "1.10.1",
+      "purl": "pkg:pub/source_span@1.10.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "source_span@1.10.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+      "type": "library",
+      "name": "flutter",
+      "version": "0.0.0",
+      "purl": "pkg:pub/flutter@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "12f06ac8-d471-4ed8-9fa9-f8365f7eaae9",
+      "type": "library",
+      "name": "lints",
+      "version": "6.0.0",
+      "purl": "pkg:pub/lints@6.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "lints@6.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "148e7ab4-0ec2-4b76-91b8-ae8725a33787",
+      "type": "library",
+      "name": "cupertino_icons",
+      "version": "1.0.8",
+      "purl": "pkg:pub/cupertino_icons@1.0.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "cupertino_icons@1.0.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "14c7ab35-fbc3-4deb-8c02-3fe0ba995419",
+      "type": "library",
+      "name": "path_provider_linux",
+      "version": "2.2.1",
+      "purl": "pkg:pub/path_provider_linux@2.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_linux@2.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "189c534e-7932-4b24-933c-eecbc821e518",
+      "type": "library",
+      "name": "material_color_utilities",
+      "version": "0.11.1",
+      "purl": "pkg:pub/material_color_utilities@0.11.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "material_color_utilities@0.11.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "24357395-470b-4753-bd35-5af746a8c129",
+      "type": "library",
+      "name": "material_color_utilities",
+      "version": "0.11.1",
+      "purl": "pkg:pub/material_color_utilities@0.11.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "material_color_utilities@0.11.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "24dd9fae-bea3-4529-8a6e-1c50b391f7ac",
+      "type": "library",
+      "name": "characters",
+      "version": "1.4.0",
+      "purl": "pkg:pub/characters@1.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "characters@1.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2a6ae050-57bc-4f04-b267-a81303e3de02",
+      "type": "library",
+      "name": "sqflite_common",
+      "version": "2.5.6",
+      "purl": "pkg:pub/sqflite_common@2.5.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_common@2.5.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2f09d079-e785-42aa-84dd-ee1a261fc35d",
+      "type": "library",
+      "name": "platform",
+      "version": "3.1.6",
+      "purl": "pkg:pub/platform@3.1.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "platform@3.1.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+      "type": "library",
+      "name": "collection",
+      "version": "1.19.1",
+      "purl": "pkg:pub/collection@1.19.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "collection@1.19.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "328247bb-2747-47f7-9235-ee63cd301512",
+      "type": "library",
+      "name": "stack_trace",
+      "version": "1.12.1",
+      "purl": "pkg:pub/stack_trace@1.12.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stack_trace@1.12.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3326119a-5adb-4f1d-9abb-1ef64bb131aa",
+      "type": "library",
+      "name": "sqflite_darwin",
+      "version": "2.4.2",
+      "purl": "pkg:pub/sqflite_darwin@2.4.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_darwin@2.4.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "33d3f134-b39a-4336-96a3-205cfea61f02",
+      "type": "library",
+      "name": "sqflite_common",
+      "version": "2.5.6",
+      "purl": "pkg:pub/sqflite_common@2.5.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_common@2.5.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3a20e12f-fe92-4cbc-9cb1-f3263d29a557",
+      "type": "library",
+      "name": "path_provider_linux",
+      "version": "2.2.1",
+      "purl": "pkg:pub/path_provider_linux@2.2.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_linux@2.2.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3c271596-551c-4afd-8da2-3d07bded20fa",
+      "type": "library",
+      "name": "path_provider_platform_interface",
+      "version": "2.1.2",
+      "purl": "pkg:pub/path_provider_platform_interface@2.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_platform_interface@2.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3e5c516c-d5d5-445d-9a60-ef4d3c66d31d",
+      "type": "library",
+      "name": "path_provider",
+      "version": "2.1.5",
+      "purl": "pkg:pub/path_provider@2.1.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider@2.1.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3fab1887-0a44-41dd-96e2-4f20b0f8b44f",
+      "type": "library",
+      "name": "synchronized",
+      "version": "3.4.0",
+      "purl": "pkg:pub/synchronized@3.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "synchronized@3.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "4060b6dd-c066-4f9b-9a51-8946e9c4b278",
+      "type": "library",
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "purl": "pkg:pub/sky_engine@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sky_engine@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "4a90f60c-916d-4956-b3a8-a9615bf027c0",
+      "type": "library",
+      "name": "ffi",
+      "version": "2.1.4",
+      "purl": "pkg:pub/ffi@2.1.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ffi@2.1.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "4b309d58-b15d-4167-9b5a-edef555d6c29",
+      "type": "library",
+      "name": "async",
+      "version": "2.13.0",
+      "purl": "pkg:pub/async@2.13.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "async@2.13.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "50a84944-a272-4eb0-ab66-f8bae9af162e",
+      "type": "library",
+      "name": "meta",
+      "version": "1.17.0",
+      "purl": "pkg:pub/meta@1.17.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "meta@1.17.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "51214e31-c017-489d-857c-b6ceb3bc7c29",
+      "type": "library",
+      "name": "sqflite_platform_interface",
+      "version": "2.4.0",
+      "purl": "pkg:pub/sqflite_platform_interface@2.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_platform_interface@2.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "51fc4c5e-3772-4069-b9b0-c1b49b593364",
+      "type": "library",
+      "name": "async",
+      "version": "2.13.0",
+      "purl": "pkg:pub/async@2.13.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "async@2.13.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "56062670-daea-474e-806e-d41ebce91978",
+      "type": "library",
+      "name": "ffi",
+      "version": "2.1.4",
+      "purl": "pkg:pub/ffi@2.1.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ffi@2.1.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "57cd4e58-fe4d-4442-ac82-4af2751eeb38",
+      "type": "library",
+      "name": "web",
+      "version": "1.1.1",
+      "purl": "pkg:pub/web@1.1.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "web@1.1.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "5bbc80a6-b2dd-41ca-aec4-d9f0d89c840f",
+      "type": "library",
+      "name": "string_scanner",
+      "version": "1.4.1",
+      "purl": "pkg:pub/string_scanner@1.4.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "string_scanner@1.4.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "61a879ab-9b12-43da-9605-4a40bdf67d63",
+      "type": "library",
+      "name": "stream_channel",
+      "version": "2.1.4",
+      "purl": "pkg:pub/stream_channel@2.1.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stream_channel@2.1.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "67b66aff-a5ed-4029-8fde-6f977f1cb346",
+      "type": "library",
+      "name": "visibility_detector",
+      "version": "0.4.0+2",
+      "purl": "pkg:pub/visibility_detector@0.4.0%2B2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "visibility_detector@0.4.0+2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "6c672216-3ae0-4e95-87c2-60629e2314f8",
+      "type": "library",
+      "name": "path_provider",
+      "version": "2.1.5",
+      "purl": "pkg:pub/path_provider@2.1.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider@2.1.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "6ea5e617-1288-41ed-856a-55753b17e4b6",
+      "type": "library",
+      "name": "sqflite_android",
+      "version": "2.4.2+2",
+      "purl": "pkg:pub/sqflite_android@2.4.2%2B2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_android@2.4.2+2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7005db56-111f-4f97-ab23-2ce17815069d",
+      "type": "library",
+      "name": "path_provider_windows",
+      "version": "2.3.0",
+      "purl": "pkg:pub/path_provider_windows@2.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_windows@2.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "740c7d57-879e-426e-bbe5-e6c711211c6b",
+      "type": "library",
+      "name": "characters",
+      "version": "1.4.0",
+      "purl": "pkg:pub/characters@1.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "characters@1.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+      "type": "library",
+      "name": "web",
+      "version": "1.1.1",
+      "purl": "pkg:pub/web@1.1.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "web@1.1.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "76fe5004-780b-40b8-9aae-dad5e87c1e5b",
+      "type": "application",
+      "name": "pubspec.lock",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7b777840-3cfa-467f-a60c-8ed41fe7b0c2",
+      "type": "library",
+      "name": "xdg_directories",
+      "version": "1.1.0",
+      "purl": "pkg:pub/xdg_directories@1.1.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xdg_directories@1.1.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "83ca11e4-04d0-48b9-abad-6da7699cf473",
+      "type": "library",
+      "name": "vector_math",
+      "version": "2.2.0",
+      "purl": "pkg:pub/vector_math@2.2.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "vector_math@2.2.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "83f81e64-52fb-48dc-8f7a-036253f80d92",
+      "type": "application",
+      "name": ".dart_tool/widget_preview_scaffold/pubspec.lock",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8782fcf9-e46b-4940-b733-b0b4d3df0ec0",
+      "type": "library",
+      "name": "clock",
+      "version": "1.1.2",
+      "purl": "pkg:pub/clock@1.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "clock@1.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "89e8100d-b0e6-43ac-8344-95ec4a3de9fa",
+      "type": "library",
+      "name": "synchronized",
+      "version": "3.4.0",
+      "purl": "pkg:pub/synchronized@3.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "synchronized@3.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "9197d39e-59b7-4a78-8d6b-9c078945634c",
+      "type": "library",
+      "name": "confetti",
+      "version": "0.7.0",
+      "purl": "pkg:pub/confetti@0.7.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "confetti@0.7.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "98f34c4e-0055-47c9-b5ca-0ef2866b6965",
+      "type": "library",
+      "name": "xdg_directories",
+      "version": "1.1.0",
+      "purl": "pkg:pub/xdg_directories@1.1.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "xdg_directories@1.1.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "9c5bec67-5ca6-4dba-ab4f-19dc2dac6a5e",
+      "type": "library",
+      "name": "typed_data",
+      "version": "1.4.0",
+      "purl": "pkg:pub/typed_data@1.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "typed_data@1.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a177b10e-28a0-4b27-bc8c-71fa7b9ef485",
+      "type": "library",
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "purl": "pkg:pub/plugin_platform_interface@2.1.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "plugin_platform_interface@2.1.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a562ada7-59e9-4627-a74e-f84398b5a470",
+      "type": "library",
+      "name": "sqflite",
+      "version": "2.4.2",
+      "purl": "pkg:pub/sqflite@2.4.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite@2.4.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a722cb33-6ac3-4386-ba42-ea9d5d33987f",
+      "type": "library",
+      "name": "lints",
+      "version": "6.0.0",
+      "purl": "pkg:pub/lints@6.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "lints@6.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "abe0cffc-eeb5-4de2-8fb4-cbd49e1601e9",
+      "type": "library",
+      "name": "path_provider_windows",
+      "version": "2.3.0",
+      "purl": "pkg:pub/path_provider_windows@2.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_windows@2.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "acbd1b01-7d60-4d8f-b9f3-954ede50f7eb",
+      "type": "library",
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "purl": "pkg:pub/sky_engine@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sky_engine@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b2f1602a-963c-4904-8afd-733bb642463a",
+      "type": "library",
+      "name": "sqflite",
+      "version": "2.4.2",
+      "purl": "pkg:pub/sqflite@2.4.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite@2.4.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b42834c1-4fbb-4c29-aafc-bc3847dc08cd",
+      "type": "library",
+      "name": "visibility_detector",
+      "version": "0.4.0+2",
+      "purl": "pkg:pub/visibility_detector@0.4.0%2B2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "visibility_detector@0.4.0+2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b9dd9843-c199-4ee3-97fc-39bca8265e25",
+      "type": "library",
+      "name": "flutter_lints",
+      "version": "6.0.0",
+      "purl": "pkg:pub/flutter_lints@6.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter_lints@6.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bc828316-84e1-4e50-b2ba-32c3950fdbf4",
+      "type": "library",
+      "name": "confetti",
+      "version": "0.7.0",
+      "purl": "pkg:pub/confetti@0.7.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "confetti@0.7.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bef3729e-7a24-4ad8-aac8-3cab06cc7f42",
+      "type": "library",
+      "name": "cupertino_icons",
+      "version": "1.0.8",
+      "purl": "pkg:pub/cupertino_icons@1.0.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "cupertino_icons@1.0.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c04a3d51-c336-429e-98f6-8c11e206b849",
+      "type": "library",
+      "name": "path",
+      "version": "1.9.1",
+      "purl": "pkg:pub/path@1.9.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path@1.9.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c21c819f-79b4-418e-b412-909b1d682f6e",
+      "type": "library",
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "purl": "pkg:pub/plugin_platform_interface@2.1.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "plugin_platform_interface@2.1.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c665c8c6-03dc-4f84-89ce-7481c4bbe72b",
+      "type": "library",
+      "name": "platform",
+      "version": "3.1.6",
+      "purl": "pkg:pub/platform@3.1.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "platform@3.1.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c6740bf4-58f8-4e79-94be-c44ad4c18a22",
+      "type": "library",
+      "name": "clock",
+      "version": "1.1.2",
+      "purl": "pkg:pub/clock@1.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "clock@1.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d1aeaae0-3c22-450d-a920-5ac73e2e574c",
+      "type": "library",
+      "name": "sqflite_platform_interface",
+      "version": "2.4.0",
+      "purl": "pkg:pub/sqflite_platform_interface@2.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_platform_interface@2.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+      "type": "library",
+      "name": "meta",
+      "version": "1.17.0",
+      "purl": "pkg:pub/meta@1.17.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "meta@1.17.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d3d699ed-156f-4a1a-964e-5c95f456f2a4",
+      "type": "library",
+      "name": "stack_trace",
+      "version": "1.12.1",
+      "purl": "pkg:pub/stack_trace@1.12.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stack_trace@1.12.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc",
+      "type": "library",
+      "name": "typed_data",
+      "version": "1.4.0",
+      "purl": "pkg:pub/typed_data@1.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "typed_data@1.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d83dc06f-785c-450d-8fe2-b8ed95b10325",
+      "type": "library",
+      "name": "vector_math",
+      "version": "2.2.0",
+      "purl": "pkg:pub/vector_math@2.2.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "vector_math@2.2.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ddf1c7bf-c608-46b2-8ff0-21c74b464216",
+      "type": "library",
+      "name": "term_glyph",
+      "version": "1.2.2",
+      "purl": "pkg:pub/term_glyph@1.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "term_glyph@1.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "deb228d2-9250-4f5d-96a0-5f87d277dba9",
+      "type": "library",
+      "name": "source_span",
+      "version": "1.10.1",
+      "purl": "pkg:pub/source_span@1.10.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "source_span@1.10.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ed691323-a7aa-479a-889a-4278de13ef48",
+      "type": "library",
+      "name": "sqflite_darwin",
+      "version": "2.4.2",
+      "purl": "pkg:pub/sqflite_darwin@2.4.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_darwin@2.4.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "f3006601-edb9-4573-90a9-7a767827c607",
+      "type": "library",
+      "name": "sqflite_android",
+      "version": "2.4.2+2",
+      "purl": "pkg:pub/sqflite_android@2.4.2%2B2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_android@2.4.2+2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fd998d9f-818f-46f6-8ebf-b89433c97e46",
+      "type": "library",
+      "name": "string_scanner",
+      "version": "1.4.1",
+      "purl": "pkg:pub/string_scanner@1.4.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "string_scanner@1.4.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/boolean_selector@2.1.2",
+      "type": "library",
+      "name": "boolean_selector",
+      "version": "2.1.2",
+      "purl": "pkg:pub/boolean_selector@2.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "boolean_selector@2.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/code_assets@1.0.0",
+      "type": "library",
+      "name": "code_assets",
+      "version": "1.0.0",
+      "purl": "pkg:pub/code_assets@1.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "code_assets@1.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/convert@3.1.2",
+      "type": "library",
+      "name": "convert",
+      "version": "3.1.2",
+      "purl": "pkg:pub/convert@3.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "convert@3.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/crypto@3.0.7",
+      "type": "library",
+      "name": "crypto",
+      "version": "3.0.7",
+      "purl": "pkg:pub/crypto@3.0.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "crypto@3.0.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/dart_service_protocol_shared@0.0.3",
+      "type": "library",
+      "name": "dart_service_protocol_shared",
+      "version": "0.0.3",
+      "purl": "pkg:pub/dart_service_protocol_shared@0.0.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "dart_service_protocol_shared@0.0.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/dtd@4.0.0",
+      "type": "library",
+      "name": "dtd",
+      "version": "4.0.0",
+      "purl": "pkg:pub/dtd@4.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "dtd@4.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/fake_async@1.3.3",
+      "type": "library",
+      "name": "fake_async",
+      "version": "1.3.3",
+      "purl": "pkg:pub/fake_async@1.3.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "fake_async@1.3.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/file@7.0.1",
+      "type": "library",
+      "name": "file",
+      "version": "7.0.1",
+      "purl": "pkg:pub/file@7.0.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "file@7.0.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_test@0.0.0",
+      "type": "library",
+      "name": "flutter_test",
+      "version": "0.0.0",
+      "purl": "pkg:pub/flutter_test@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter_test@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_web_plugins@0.0.0",
+      "type": "library",
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "purl": "pkg:pub/flutter_web_plugins@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "flutter_web_plugins@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/glob@2.1.3",
+      "type": "library",
+      "name": "glob",
+      "version": "2.1.3",
+      "purl": "pkg:pub/glob@2.1.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "glob@2.1.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/google_fonts@6.3.2",
+      "type": "library",
+      "name": "google_fonts",
+      "version": "6.3.2",
+      "purl": "pkg:pub/google_fonts@6.3.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "google_fonts@6.3.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/hooks@1.0.0",
+      "type": "library",
+      "name": "hooks",
+      "version": "1.0.0",
+      "purl": "pkg:pub/hooks@1.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "hooks@1.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/http@1.6.0",
+      "type": "library",
+      "name": "http",
+      "version": "1.6.0",
+      "purl": "pkg:pub/http@1.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "http@1.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/http_parser@4.1.2",
+      "type": "library",
+      "name": "http_parser",
+      "version": "4.1.2",
+      "purl": "pkg:pub/http_parser@4.1.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "http_parser@4.1.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/json_rpc_2@4.0.0",
+      "type": "library",
+      "name": "json_rpc_2",
+      "version": "4.0.0",
+      "purl": "pkg:pub/json_rpc_2@4.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "json_rpc_2@4.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/leak_tracker@11.0.2",
+      "type": "library",
+      "name": "leak_tracker",
+      "version": "11.0.2",
+      "purl": "pkg:pub/leak_tracker@11.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "leak_tracker@11.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/leak_tracker_flutter_testing@3.0.10",
+      "type": "library",
+      "name": "leak_tracker_flutter_testing",
+      "version": "3.0.10",
+      "purl": "pkg:pub/leak_tracker_flutter_testing@3.0.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "leak_tracker_flutter_testing@3.0.10"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/leak_tracker_testing@3.0.2",
+      "type": "library",
+      "name": "leak_tracker_testing",
+      "version": "3.0.2",
+      "purl": "pkg:pub/leak_tracker_testing@3.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "leak_tracker_testing@3.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/logging@1.3.0",
+      "type": "library",
+      "name": "logging",
+      "version": "1.3.0",
+      "purl": "pkg:pub/logging@1.3.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "logging@1.3.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/matcher@0.12.17",
+      "type": "library",
+      "name": "matcher",
+      "version": "0.12.17",
+      "purl": "pkg:pub/matcher@0.12.17",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "matcher@0.12.17"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/native_toolchain_c@0.17.4",
+      "type": "library",
+      "name": "native_toolchain_c",
+      "version": "0.17.4",
+      "purl": "pkg:pub/native_toolchain_c@0.17.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "native_toolchain_c@0.17.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/password@1.0.0%2B1",
+      "type": "library",
+      "name": "password",
+      "version": "1.0.0+1",
+      "purl": "pkg:pub/password@1.0.0%2B1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "password@1.0.0+1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider_android@2.2.20",
+      "type": "library",
+      "name": "path_provider_android",
+      "version": "2.2.20",
+      "purl": "pkg:pub/path_provider_android@2.2.20",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_android@2.2.20"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider_android@2.2.22",
+      "type": "library",
+      "name": "path_provider_android",
+      "version": "2.2.22",
+      "purl": "pkg:pub/path_provider_android@2.2.22",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_android@2.2.22"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider_foundation@2.4.3",
+      "type": "library",
+      "name": "path_provider_foundation",
+      "version": "2.4.3",
+      "purl": "pkg:pub/path_provider_foundation@2.4.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_foundation@2.4.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider_foundation@2.4.4",
+      "type": "library",
+      "name": "path_provider_foundation",
+      "version": "2.4.4",
+      "purl": "pkg:pub/path_provider_foundation@2.4.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "path_provider_foundation@2.4.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/pub_semver@2.2.0",
+      "type": "library",
+      "name": "pub_semver",
+      "version": "2.2.0",
+      "purl": "pkg:pub/pub_semver@2.2.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "pub_semver@2.2.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/sqflite_common_ffi@2.3.6",
+      "type": "library",
+      "name": "sqflite_common_ffi",
+      "version": "2.3.6",
+      "purl": "pkg:pub/sqflite_common_ffi@2.3.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_common_ffi@2.3.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/sqflite_common_ffi@2.4.0",
+      "type": "library",
+      "name": "sqflite_common_ffi",
+      "version": "2.4.0",
+      "purl": "pkg:pub/sqflite_common_ffi@2.4.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqflite_common_ffi@2.4.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/sqlite3@2.9.4",
+      "type": "library",
+      "name": "sqlite3",
+      "version": "2.9.4",
+      "purl": "pkg:pub/sqlite3@2.9.4",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqlite3@2.9.4"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/sqlite3@3.1.0",
+      "type": "library",
+      "name": "sqlite3",
+      "version": "3.1.0",
+      "purl": "pkg:pub/sqlite3@3.1.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "sqlite3@3.1.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/test_api@0.7.7",
+      "type": "library",
+      "name": "test_api",
+      "version": "0.7.7",
+      "purl": "pkg:pub/test_api@0.7.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "test_api@0.7.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/unified_analytics@8.0.5",
+      "type": "library",
+      "name": "unified_analytics",
+      "version": "8.0.5",
+      "purl": "pkg:pub/unified_analytics@8.0.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "unified_analytics@8.0.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher@6.3.2",
+      "type": "library",
+      "name": "url_launcher",
+      "version": "6.3.2",
+      "purl": "pkg:pub/url_launcher@6.3.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher@6.3.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_android@6.3.28",
+      "type": "library",
+      "name": "url_launcher_android",
+      "version": "6.3.28",
+      "purl": "pkg:pub/url_launcher_android@6.3.28",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_android@6.3.28"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_ios@6.3.6",
+      "type": "library",
+      "name": "url_launcher_ios",
+      "version": "6.3.6",
+      "purl": "pkg:pub/url_launcher_ios@6.3.6",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_ios@6.3.6"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_linux@3.2.2",
+      "type": "library",
+      "name": "url_launcher_linux",
+      "version": "3.2.2",
+      "purl": "pkg:pub/url_launcher_linux@3.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_linux@3.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_macos@3.2.5",
+      "type": "library",
+      "name": "url_launcher_macos",
+      "version": "3.2.5",
+      "purl": "pkg:pub/url_launcher_macos@3.2.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_macos@3.2.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_platform_interface@2.3.2",
+      "type": "library",
+      "name": "url_launcher_platform_interface",
+      "version": "2.3.2",
+      "purl": "pkg:pub/url_launcher_platform_interface@2.3.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_platform_interface@2.3.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_web@2.4.1",
+      "type": "library",
+      "name": "url_launcher_web",
+      "version": "2.4.1",
+      "purl": "pkg:pub/url_launcher_web@2.4.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_web@2.4.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher_windows@3.1.5",
+      "type": "library",
+      "name": "url_launcher_windows",
+      "version": "3.1.5",
+      "purl": "pkg:pub/url_launcher_windows@3.1.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "url_launcher_windows@3.1.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/vm_service@15.0.2",
+      "type": "library",
+      "name": "vm_service",
+      "version": "15.0.2",
+      "purl": "pkg:pub/vm_service@15.0.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "vm_service@15.0.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/web_socket@1.0.1",
+      "type": "library",
+      "name": "web_socket",
+      "version": "1.0.1",
+      "purl": "pkg:pub/web_socket@1.0.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "web_socket@1.0.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/web_socket_channel@3.0.3",
+      "type": "library",
+      "name": "web_socket_channel",
+      "version": "3.0.3",
+      "purl": "pkg:pub/web_socket_channel@3.0.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "web_socket_channel@3.0.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pub/yaml@3.1.3",
+      "type": "library",
+      "name": "yaml",
+      "version": "3.1.3",
+      "purl": "pkg:pub/yaml@3.1.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "yaml@3.1.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "pub"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "053703e7-a70a-4a5e-afa2-062720c097a6",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "2f09d079-e785-42aa-84dd-ee1a261fc35d",
+        "c21c819f-79b4-418e-b412-909b1d682f6e"
+      ]
+    },
+    {
+      "ref": "0624dcba-fa13-4eee-9853-b19b8d171a04",
+      "dependsOn": []
+    },
+    {
+      "ref": "06a3ce08-c635-4c6b-89b8-95cffd91525e",
+      "dependsOn": [
+        "12f06ac8-d471-4ed8-9fa9-f8365f7eaae9"
+      ]
+    },
+    {
+      "ref": "08339fb9-e45c-4a9f-ac00-f7c409d16a1d",
+      "dependsOn": []
+    },
+    {
+      "ref": "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+      "dependsOn": []
+    },
+    {
+      "ref": "0af05c61-be14-4892-8eda-3347fa56ebee",
+      "dependsOn": []
+    },
+    {
+      "ref": "0eef246f-fe59-46f2-ac3c-d843bc5efab4",
+      "dependsOn": [
+        "51fc4c5e-3772-4069-b9b0-c1b49b593364"
+      ]
+    },
+    {
+      "ref": "11b7ed01-1ac6-45c5-b129-bb728dda0205",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "08339fb9-e45c-4a9f-ac00-f7c409d16a1d",
+        "0af05c61-be14-4892-8eda-3347fa56ebee"
+      ]
+    },
+    {
+      "ref": "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+      "dependsOn": []
+    },
+    {
+      "ref": "12f06ac8-d471-4ed8-9fa9-f8365f7eaae9",
+      "dependsOn": []
+    },
+    {
+      "ref": "148e7ab4-0ec2-4b76-91b8-ae8725a33787",
+      "dependsOn": []
+    },
+    {
+      "ref": "14c7ab35-fbc3-4deb-8c02-3fe0ba995419",
+      "dependsOn": [
+        "053703e7-a70a-4a5e-afa2-062720c097a6",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "4a90f60c-916d-4956-b3a8-a9615bf027c0",
+        "98f34c4e-0055-47c9-b5ca-0ef2866b6965",
+        "c04a3d51-c336-429e-98f6-8c11e206b849"
+      ]
+    },
+    {
+      "ref": "189c534e-7932-4b24-933c-eecbc821e518",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42"
+      ]
+    },
+    {
+      "ref": "24357395-470b-4753-bd35-5af746a8c129",
+      "dependsOn": [
+        "0af05c61-be14-4892-8eda-3347fa56ebee"
+      ]
+    },
+    {
+      "ref": "24dd9fae-bea3-4529-8a6e-1c50b391f7ac",
+      "dependsOn": []
+    },
+    {
+      "ref": "2a6ae050-57bc-4f04-b267-a81303e3de02",
+      "dependsOn": [
+        "89e8100d-b0e6-43ac-8344-95ec4a3de9fa",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "2f09d079-e785-42aa-84dd-ee1a261fc35d",
+      "dependsOn": []
+    },
+    {
+      "ref": "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+      "dependsOn": []
+    },
+    {
+      "ref": "328247bb-2747-47f7-9235-ee63cd301512",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04"
+      ]
+    },
+    {
+      "ref": "3326119a-5adb-4f1d-9abb-1ef64bb131aa",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "33d3f134-b39a-4336-96a3-205cfea61f02",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "51214e31-c017-489d-857c-b6ceb3bc7c29"
+      ]
+    },
+    {
+      "ref": "33d3f134-b39a-4336-96a3-205cfea61f02",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "3fab1887-0a44-41dd-96e2-4f20b0f8b44f",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e"
+      ]
+    },
+    {
+      "ref": "3a20e12f-fe92-4cbc-9cb1-f3263d29a557",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3c271596-551c-4afd-8da2-3d07bded20fa",
+        "56062670-daea-474e-806e-d41ebce91978",
+        "7b777840-3cfa-467f-a60c-8ed41fe7b0c2"
+      ]
+    },
+    {
+      "ref": "3c271596-551c-4afd-8da2-3d07bded20fa",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "a177b10e-28a0-4b27-bc8c-71fa7b9ef485",
+        "c665c8c6-03dc-4f84-89ce-7481c4bbe72b"
+      ]
+    },
+    {
+      "ref": "3e5c516c-d5d5-445d-9a60-ef4d3c66d31d",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3a20e12f-fe92-4cbc-9cb1-f3263d29a557",
+        "3c271596-551c-4afd-8da2-3d07bded20fa",
+        "abe0cffc-eeb5-4de2-8fb4-cbd49e1601e9",
+        "pkg:pub/path_provider_android@2.2.20",
+        "pkg:pub/path_provider_foundation@2.4.3"
+      ]
+    },
+    {
+      "ref": "3fab1887-0a44-41dd-96e2-4f20b0f8b44f",
+      "dependsOn": []
+    },
+    {
+      "ref": "4060b6dd-c066-4f9b-9a51-8946e9c4b278",
+      "dependsOn": []
+    },
+    {
+      "ref": "4a90f60c-916d-4956-b3a8-a9615bf027c0",
+      "dependsOn": []
+    },
+    {
+      "ref": "4b309d58-b15d-4167-9b5a-edef555d6c29",
+      "dependsOn": [
+        "0af05c61-be14-4892-8eda-3347fa56ebee",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e"
+      ]
+    },
+    {
+      "ref": "50a84944-a272-4eb0-ab66-f8bae9af162e",
+      "dependsOn": []
+    },
+    {
+      "ref": "51214e31-c017-489d-857c-b6ceb3bc7c29",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "33d3f134-b39a-4336-96a3-205cfea61f02",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "a177b10e-28a0-4b27-bc8c-71fa7b9ef485",
+        "c665c8c6-03dc-4f84-89ce-7481c4bbe72b"
+      ]
+    },
+    {
+      "ref": "51fc4c5e-3772-4069-b9b0-c1b49b593364",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "56062670-daea-474e-806e-d41ebce91978",
+      "dependsOn": []
+    },
+    {
+      "ref": "57cd4e58-fe4d-4442-ac82-4af2751eeb38",
+      "dependsOn": []
+    },
+    {
+      "ref": "5bbc80a6-b2dd-41ca-aec4-d9f0d89c840f",
+      "dependsOn": [
+        "deb228d2-9250-4f5d-96a0-5f87d277dba9"
+      ]
+    },
+    {
+      "ref": "61a879ab-9b12-43da-9605-4a40bdf67d63",
+      "dependsOn": [
+        "4b309d58-b15d-4167-9b5a-edef555d6c29"
+      ]
+    },
+    {
+      "ref": "67b66aff-a5ed-4029-8fde-6f977f1cb346",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d"
+      ]
+    },
+    {
+      "ref": "6c672216-3ae0-4e95-87c2-60629e2314f8",
+      "dependsOn": [
+        "053703e7-a70a-4a5e-afa2-062720c097a6",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "14c7ab35-fbc3-4deb-8c02-3fe0ba995419",
+        "7005db56-111f-4f97-ab23-2ce17815069d",
+        "pkg:pub/path_provider_android@2.2.22",
+        "pkg:pub/path_provider_foundation@2.4.4"
+      ]
+    },
+    {
+      "ref": "6ea5e617-1288-41ed-856a-55753b17e4b6",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "2a6ae050-57bc-4f04-b267-a81303e3de02",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d1aeaae0-3c22-450d-a920-5ac73e2e574c"
+      ]
+    },
+    {
+      "ref": "7005db56-111f-4f97-ab23-2ce17815069d",
+      "dependsOn": [
+        "053703e7-a70a-4a5e-afa2-062720c097a6",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "4a90f60c-916d-4956-b3a8-a9615bf027c0",
+        "c04a3d51-c336-429e-98f6-8c11e206b849"
+      ]
+    },
+    {
+      "ref": "740c7d57-879e-426e-bbe5-e6c711211c6b",
+      "dependsOn": []
+    },
+    {
+      "ref": "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+      "dependsOn": []
+    },
+    {
+      "ref": "76fe5004-780b-40b8-9aae-dad5e87c1e5b",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "148e7ab4-0ec2-4b76-91b8-ae8725a33787",
+        "24357395-470b-4753-bd35-5af746a8c129",
+        "3e5c516c-d5d5-445d-9a60-ef4d3c66d31d",
+        "740c7d57-879e-426e-bbe5-e6c711211c6b",
+        "a562ada7-59e9-4627-a74e-f84398b5a470",
+        "acbd1b01-7d60-4d8f-b9f3-954ede50f7eb",
+        "b42834c1-4fbb-4c29-aafc-bc3847dc08cd",
+        "b9dd9843-c199-4ee3-97fc-39bca8265e25",
+        "bc828316-84e1-4e50-b2ba-32c3950fdbf4",
+        "pkg:pub/fake_async@1.3.3",
+        "pkg:pub/flutter_test@0.0.0",
+        "pkg:pub/leak_tracker_flutter_testing@3.0.10",
+        "pkg:pub/sqflite_common_ffi@2.3.6"
+      ]
+    },
+    {
+      "ref": "7b777840-3cfa-467f-a60c-8ed41fe7b0c2",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e"
+      ]
+    },
+    {
+      "ref": "83a8e370-fc90-4c3f-b913-cf00830d3e40",
+      "dependsOn": [
+        "76fe5004-780b-40b8-9aae-dad5e87c1e5b",
+        "83f81e64-52fb-48dc-8f7a-036253f80d92"
+      ]
+    },
+    {
+      "ref": "83ca11e4-04d0-48b9-abad-6da7699cf473",
+      "dependsOn": []
+    },
+    {
+      "ref": "83f81e64-52fb-48dc-8f7a-036253f80d92",
+      "dependsOn": [
+        "06a3ce08-c635-4c6b-89b8-95cffd91525e",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "189c534e-7932-4b24-933c-eecbc821e518",
+        "24dd9fae-bea3-4529-8a6e-1c50b391f7ac",
+        "4060b6dd-c066-4f9b-9a51-8946e9c4b278",
+        "67b66aff-a5ed-4029-8fde-6f977f1cb346",
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+        "9197d39e-59b7-4a78-8d6b-9c078945634c",
+        "b2f1602a-963c-4904-8afd-733bb642463a",
+        "bef3729e-7a24-4ad8-aac8-3cab06cc7f42",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3d699ed-156f-4a1a-964e-5c95f456f2a4",
+        "pkg:pub/dtd@4.0.0",
+        "pkg:pub/google_fonts@6.3.2",
+        "pkg:pub/json_rpc_2@4.0.0",
+        "pkg:pub/password@1.0.0%2B1",
+        "pkg:pub/sqflite_common_ffi@2.4.0",
+        "pkg:pub/url_launcher@6.3.2"
+      ]
+    },
+    {
+      "ref": "8782fcf9-e46b-4940-b733-b0b4d3df0ec0",
+      "dependsOn": []
+    },
+    {
+      "ref": "89e8100d-b0e6-43ac-8344-95ec4a3de9fa",
+      "dependsOn": []
+    },
+    {
+      "ref": "9197d39e-59b7-4a78-8d6b-9c078945634c",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "83ca11e4-04d0-48b9-abad-6da7699cf473"
+      ]
+    },
+    {
+      "ref": "98f34c4e-0055-47c9-b5ca-0ef2866b6965",
+      "dependsOn": [
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "9c5bec67-5ca6-4dba-ab4f-19dc2dac6a5e",
+      "dependsOn": [
+        "0af05c61-be14-4892-8eda-3347fa56ebee"
+      ]
+    },
+    {
+      "ref": "a177b10e-28a0-4b27-bc8c-71fa7b9ef485",
+      "dependsOn": [
+        "50a84944-a272-4eb0-ab66-f8bae9af162e"
+      ]
+    },
+    {
+      "ref": "a562ada7-59e9-4627-a74e-f84398b5a470",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3326119a-5adb-4f1d-9abb-1ef64bb131aa",
+        "33d3f134-b39a-4336-96a3-205cfea61f02",
+        "51214e31-c017-489d-857c-b6ceb3bc7c29",
+        "f3006601-edb9-4573-90a9-7a767827c607"
+      ]
+    },
+    {
+      "ref": "a722cb33-6ac3-4386-ba42-ea9d5d33987f",
+      "dependsOn": []
+    },
+    {
+      "ref": "abe0cffc-eeb5-4de2-8fb4-cbd49e1601e9",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3c271596-551c-4afd-8da2-3d07bded20fa",
+        "56062670-daea-474e-806e-d41ebce91978"
+      ]
+    },
+    {
+      "ref": "acbd1b01-7d60-4d8f-b9f3-954ede50f7eb",
+      "dependsOn": []
+    },
+    {
+      "ref": "b2f1602a-963c-4904-8afd-733bb642463a",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "2a6ae050-57bc-4f04-b267-a81303e3de02",
+        "6ea5e617-1288-41ed-856a-55753b17e4b6",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d1aeaae0-3c22-450d-a920-5ac73e2e574c",
+        "ed691323-a7aa-479a-889a-4278de13ef48"
+      ]
+    },
+    {
+      "ref": "b42834c1-4fbb-4c29-aafc-bc3847dc08cd",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98"
+      ]
+    },
+    {
+      "ref": "b9dd9843-c199-4ee3-97fc-39bca8265e25",
+      "dependsOn": [
+        "a722cb33-6ac3-4386-ba42-ea9d5d33987f"
+      ]
+    },
+    {
+      "ref": "bc828316-84e1-4e50-b2ba-32c3950fdbf4",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "d83dc06f-785c-450d-8fe2-b8ed95b10325"
+      ]
+    },
+    {
+      "ref": "bef3729e-7a24-4ad8-aac8-3cab06cc7f42",
+      "dependsOn": []
+    },
+    {
+      "ref": "c04a3d51-c336-429e-98f6-8c11e206b849",
+      "dependsOn": []
+    },
+    {
+      "ref": "c21c819f-79b4-418e-b412-909b1d682f6e",
+      "dependsOn": [
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "c665c8c6-03dc-4f84-89ce-7481c4bbe72b",
+      "dependsOn": []
+    },
+    {
+      "ref": "c6740bf4-58f8-4e79-94be-c44ad4c18a22",
+      "dependsOn": []
+    },
+    {
+      "ref": "d1aeaae0-3c22-450d-a920-5ac73e2e574c",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "2a6ae050-57bc-4f04-b267-a81303e3de02",
+        "2f09d079-e785-42aa-84dd-ee1a261fc35d",
+        "c21c819f-79b4-418e-b412-909b1d682f6e",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+      "dependsOn": []
+    },
+    {
+      "ref": "d3d699ed-156f-4a1a-964e-5c95f456f2a4",
+      "dependsOn": [
+        "c04a3d51-c336-429e-98f6-8c11e206b849"
+      ]
+    },
+    {
+      "ref": "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42"
+      ]
+    },
+    {
+      "ref": "d83dc06f-785c-450d-8fe2-b8ed95b10325",
+      "dependsOn": []
+    },
+    {
+      "ref": "ddf1c7bf-c608-46b2-8ff0-21c74b464216",
+      "dependsOn": []
+    },
+    {
+      "ref": "deb228d2-9250-4f5d-96a0-5f87d277dba9",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "ddf1c7bf-c608-46b2-8ff0-21c74b464216"
+      ]
+    },
+    {
+      "ref": "ed691323-a7aa-479a-889a-4278de13ef48",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "2a6ae050-57bc-4f04-b267-a81303e3de02",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d1aeaae0-3c22-450d-a920-5ac73e2e574c",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "f3006601-edb9-4573-90a9-7a767827c607",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "33d3f134-b39a-4336-96a3-205cfea61f02",
+        "51214e31-c017-489d-857c-b6ceb3bc7c29"
+      ]
+    },
+    {
+      "ref": "fd998d9f-818f-46f6-8ebf-b89433c97e46",
+      "dependsOn": [
+        "11b7ed01-1ac6-45c5-b129-bb728dda0205"
+      ]
+    },
+    {
+      "ref": "pkg:pub/boolean_selector@2.1.2",
+      "dependsOn": [
+        "11b7ed01-1ac6-45c5-b129-bb728dda0205",
+        "fd998d9f-818f-46f6-8ebf-b89433c97e46"
+      ]
+    },
+    {
+      "ref": "pkg:pub/code_assets@1.0.0",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "pkg:pub/hooks@1.0.0"
+      ]
+    },
+    {
+      "ref": "pkg:pub/convert@3.1.2",
+      "dependsOn": [
+        "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc"
+      ]
+    },
+    {
+      "ref": "pkg:pub/crypto@3.0.7",
+      "dependsOn": [
+        "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc"
+      ]
+    },
+    {
+      "ref": "pkg:pub/dart_service_protocol_shared@0.0.3",
+      "dependsOn": [
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "pkg:pub/dtd@4.0.0",
+      "dependsOn": [
+        "0eef246f-fe59-46f2-ac3c-d843bc5efab4",
+        "pkg:pub/dart_service_protocol_shared@0.0.3",
+        "pkg:pub/json_rpc_2@4.0.0",
+        "pkg:pub/unified_analytics@8.0.5",
+        "pkg:pub/web_socket_channel@3.0.3"
+      ]
+    },
+    {
+      "ref": "pkg:pub/fake_async@1.3.3",
+      "dependsOn": [
+        "0af05c61-be14-4892-8eda-3347fa56ebee",
+        "c6740bf4-58f8-4e79-94be-c44ad4c18a22"
+      ]
+    },
+    {
+      "ref": "pkg:pub/file@7.0.1",
+      "dependsOn": [
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266"
+      ]
+    },
+    {
+      "ref": "pkg:pub/flutter_test@0.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pub/flutter_web_plugins@0.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pub/glob@2.1.3",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "51fc4c5e-3772-4069-b9b0-c1b49b593364",
+        "5bbc80a6-b2dd-41ca-aec4-d9f0d89c840f",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "pkg:pub/file@7.0.1"
+      ]
+    },
+    {
+      "ref": "pkg:pub/google_fonts@6.3.2",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "6c672216-3ae0-4e95-87c2-60629e2314f8",
+        "pkg:pub/crypto@3.0.7",
+        "pkg:pub/http@1.6.0"
+      ]
+    },
+    {
+      "ref": "pkg:pub/hooks@1.0.0",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "pkg:pub/crypto@3.0.7",
+        "pkg:pub/logging@1.3.0",
+        "pkg:pub/pub_semver@2.2.0",
+        "pkg:pub/yaml@3.1.3"
+      ]
+    },
+    {
+      "ref": "pkg:pub/http@1.6.0",
+      "dependsOn": [
+        "51fc4c5e-3772-4069-b9b0-c1b49b593364",
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "pkg:pub/http_parser@4.1.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/http_parser@4.1.2",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "5bbc80a6-b2dd-41ca-aec4-d9f0d89c840f",
+        "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc",
+        "deb228d2-9250-4f5d-96a0-5f87d277dba9"
+      ]
+    },
+    {
+      "ref": "pkg:pub/json_rpc_2@4.0.0",
+      "dependsOn": [
+        "0eef246f-fe59-46f2-ac3c-d843bc5efab4",
+        "d3d699ed-156f-4a1a-964e-5c95f456f2a4"
+      ]
+    },
+    {
+      "ref": "pkg:pub/leak_tracker@11.0.2",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0af05c61-be14-4892-8eda-3347fa56ebee",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "c6740bf4-58f8-4e79-94be-c44ad4c18a22",
+        "pkg:pub/vm_service@15.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/leak_tracker_flutter_testing@3.0.10",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "pkg:pub/leak_tracker@11.0.2",
+        "pkg:pub/leak_tracker_testing@3.0.2",
+        "pkg:pub/matcher@0.12.17"
+      ]
+    },
+    {
+      "ref": "pkg:pub/leak_tracker_testing@3.0.2",
+      "dependsOn": [
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "pkg:pub/leak_tracker@11.0.2",
+        "pkg:pub/matcher@0.12.17"
+      ]
+    },
+    {
+      "ref": "pkg:pub/logging@1.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pub/matcher@0.12.17",
+      "dependsOn": [
+        "08339fb9-e45c-4a9f-ac00-f7c409d16a1d",
+        "328247bb-2747-47f7-9235-ee63cd301512",
+        "4b309d58-b15d-4167-9b5a-edef555d6c29",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "pkg:pub/test_api@0.7.7"
+      ]
+    },
+    {
+      "ref": "pkg:pub/native_toolchain_c@0.17.4",
+      "dependsOn": [
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "pkg:pub/code_assets@1.0.0",
+        "pkg:pub/glob@2.1.3",
+        "pkg:pub/hooks@1.0.0",
+        "pkg:pub/logging@1.3.0",
+        "pkg:pub/pub_semver@2.2.0"
+      ]
+    },
+    {
+      "ref": "pkg:pub/password@1.0.0%2B1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pub/path_provider_android@2.2.20",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3c271596-551c-4afd-8da2-3d07bded20fa"
+      ]
+    },
+    {
+      "ref": "pkg:pub/path_provider_android@2.2.22",
+      "dependsOn": [
+        "053703e7-a70a-4a5e-afa2-062720c097a6",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d"
+      ]
+    },
+    {
+      "ref": "pkg:pub/path_provider_foundation@2.4.3",
+      "dependsOn": [
+        "0892a6cd-c66e-4007-bec7-e29f1c3f5d98",
+        "3c271596-551c-4afd-8da2-3d07bded20fa"
+      ]
+    },
+    {
+      "ref": "pkg:pub/path_provider_foundation@2.4.4",
+      "dependsOn": [
+        "053703e7-a70a-4a5e-afa2-062720c097a6",
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d"
+      ]
+    },
+    {
+      "ref": "pkg:pub/pub_semver@2.2.0",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42"
+      ]
+    },
+    {
+      "ref": "pkg:pub/sqflite_common_ffi@2.3.6",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "33d3f134-b39a-4336-96a3-205cfea61f02",
+        "3fab1887-0a44-41dd-96e2-4f20b0f8b44f",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "pkg:pub/sqlite3@2.9.4"
+      ]
+    },
+    {
+      "ref": "pkg:pub/sqflite_common_ffi@2.4.0",
+      "dependsOn": [
+        "2a6ae050-57bc-4f04-b267-a81303e3de02",
+        "89e8100d-b0e6-43ac-8344-95ec4a3de9fa",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "pkg:pub/sqlite3@3.1.0"
+      ]
+    },
+    {
+      "ref": "pkg:pub/sqlite3@2.9.4",
+      "dependsOn": [
+        "0624dcba-fa13-4eee-9853-b19b8d171a04",
+        "0af05c61-be14-4892-8eda-3347fa56ebee",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "56062670-daea-474e-806e-d41ebce91978",
+        "57cd4e58-fe4d-4442-ac82-4af2751eeb38",
+        "9c5bec67-5ca6-4dba-ab4f-19dc2dac6a5e"
+      ]
+    },
+    {
+      "ref": "pkg:pub/sqlite3@3.1.0",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "4a90f60c-916d-4956-b3a8-a9615bf027c0",
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+        "c04a3d51-c336-429e-98f6-8c11e206b849",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "d583ad11-5fd7-4dc9-ab01-fa2a8a073dcc",
+        "pkg:pub/code_assets@1.0.0",
+        "pkg:pub/crypto@3.0.7",
+        "pkg:pub/hooks@1.0.0",
+        "pkg:pub/native_toolchain_c@0.17.4"
+      ]
+    },
+    {
+      "ref": "pkg:pub/test_api@0.7.7",
+      "dependsOn": [
+        "08339fb9-e45c-4a9f-ac00-f7c409d16a1d",
+        "0af05c61-be14-4892-8eda-3347fa56ebee",
+        "11b7ed01-1ac6-45c5-b129-bb728dda0205",
+        "328247bb-2747-47f7-9235-ee63cd301512",
+        "4b309d58-b15d-4167-9b5a-edef555d6c29",
+        "50a84944-a272-4eb0-ab66-f8bae9af162e",
+        "61a879ab-9b12-43da-9605-4a40bdf67d63",
+        "fd998d9f-818f-46f6-8ebf-b89433c97e46",
+        "pkg:pub/boolean_selector@2.1.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/unified_analytics@8.0.5",
+      "dependsOn": [
+        "8782fcf9-e46b-4940-b733-b0b4d3df0ec0",
+        "d3a64100-1aaf-4892-b636-9fe0b07fa266",
+        "pkg:pub/convert@3.1.2",
+        "pkg:pub/file@7.0.1",
+        "pkg:pub/http@1.6.0"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher@6.3.2",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_android@6.3.28",
+        "pkg:pub/url_launcher_ios@6.3.6",
+        "pkg:pub/url_launcher_linux@3.2.2",
+        "pkg:pub/url_launcher_macos@3.2.5",
+        "pkg:pub/url_launcher_platform_interface@2.3.2",
+        "pkg:pub/url_launcher_web@2.4.1",
+        "pkg:pub/url_launcher_windows@3.1.5"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_android@6.3.28",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_ios@6.3.6",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_linux@3.2.2",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_macos@3.2.5",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_platform_interface@2.3.2",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "c21c819f-79b4-418e-b412-909b1d682f6e"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_web@2.4.1",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+        "pkg:pub/flutter_web_plugins@0.0.0",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/url_launcher_windows@3.1.5",
+      "dependsOn": [
+        "124d06a4-7fc9-49f4-b670-754a4a671e6d",
+        "pkg:pub/url_launcher_platform_interface@2.3.2"
+      ]
+    },
+    {
+      "ref": "pkg:pub/vm_service@15.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pub/web_socket@1.0.1",
+      "dependsOn": [
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51"
+      ]
+    },
+    {
+      "ref": "pkg:pub/web_socket_channel@3.0.3",
+      "dependsOn": [
+        "0eef246f-fe59-46f2-ac3c-d843bc5efab4",
+        "51fc4c5e-3772-4069-b9b0-c1b49b593364",
+        "75237b47-9ca7-4c1f-966d-3f5e1c76bf51",
+        "pkg:pub/crypto@3.0.7",
+        "pkg:pub/web_socket@1.0.1"
+      ]
+    },
+    {
+      "ref": "pkg:pub/yaml@3.1.3",
+      "dependsOn": [
+        "2f296d0f-2e8e-43c6-a6a7-ec7b619abb42",
+        "5bbc80a6-b2dd-41ca-aec4-d9f0d89c840f",
+        "deb228d2-9250-4f5d-96a0-5f87d277dba9"
+      ]
+    }
+  ],
+  "vulnerabilities": []
+}
