@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:password/screens/StrengthFeedback.dart';
-import 'LessonCoachScreen.dart';
+import 'package:password/screens/strength_feedback.dart';
+import 'lesson_coach_screen.dart';
 import 'password_generator_screen.dart';
 
 /* ──────────────────────────────────────────────
@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen>
                       child: Image.asset(
                         'assets/images/logo.jpg',
                         fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) =>
+                        errorBuilder: (_, _, _) =>
                             const Icon(Icons.lock_rounded, color: Colors.white),
                       ),
                     ),
@@ -273,7 +273,7 @@ class _SideNavRail extends StatelessWidget {
     return Semantics(
       label: 'Main navigation',
       child: NavigationRail(
-        backgroundColor: AppColors.navy.withOpacity(0.9),
+        backgroundColor: AppColors.navy.withValues(alpha: 0.9),
         selectedIndex: selectedIndex,
         selectedIconTheme:
             const IconThemeData(color: Colors.white, size: 26),
@@ -616,7 +616,7 @@ class _BigLogo extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: Colors.white.withOpacity(0.7),
+          color: Colors.white.withValues(alpha: 0.7),
           width: 2,
         ),
       ),
@@ -624,7 +624,7 @@ class _BigLogo extends StatelessWidget {
         child: Image.asset(
           'assets/images/logo.jpg',
           fit: BoxFit.cover,
-          errorBuilder: (_, __, ___) =>
+          errorBuilder: (_, _, _) =>
               const Icon(Icons.error, size: 100, color: Colors.white),
         ),
       ),
@@ -645,7 +645,7 @@ class _TextPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.9),
+        color: Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.white70),
       ),
@@ -698,7 +698,7 @@ class _FeatureCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: onColor.withOpacity(0.15),
+                    color: onColor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Icon(icon, size: 28, color: onColor),
@@ -725,7 +725,7 @@ class _FeatureCard extends StatelessWidget {
                           subtitle,
                           textScaler: textScaler,
                           style: TextStyle(
-                            color: onColor.withOpacity(0.95),
+                            color: onColor.withValues(alpha: 0.95),
                             fontSize: 14,
                           ),
                           maxLines: 2,

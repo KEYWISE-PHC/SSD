@@ -44,14 +44,14 @@ class LessonSelectionList extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                 decoration: BoxDecoration(
                   // 'Frosted glass' effect: partially transparent white color.
-                  color: Colors.white.withOpacity(0.1), 
+                  color: Colors.white.withValues(alpha: 0.1), 
                   borderRadius: BorderRadius.circular(20),
                   // Slight white border to enhance the "lifted" look.
-                  border: Border.all(color: Colors.white.withOpacity(0.3)),
+                  border: Border.all(color: Colors.white.withValues(alpha:0.3)),
                   boxShadow: [
                     // Shadow for depth and separation from the gradient background.
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withValues(alpha:0.3),
                       blurRadius: 15,
                       offset: const Offset(0, 6),
                     ),

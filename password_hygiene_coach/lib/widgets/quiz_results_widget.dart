@@ -2,7 +2,7 @@ import 'dart:math'; // Used for mathematics constants like 'pi' for confetti dir
 import 'package:flutter/material.dart'; // Core Flutter material design library.
 import 'package:confetti/confetti.dart'; // External package for confetti animation effects.
 import 'package:password/models/lesson.dart'; // Import the Lesson data model.
-import 'package:password/screens/LessonCoachScreen.dart'; // Import for LessonStateData structure.
+import 'package:password/screens/lesson_coach_screen.dart'; // Import for LessonStateData structure.
 
 /// A StatefulWidget that displays the final quiz results (score, pass/fail status)
 /// and provides action buttons (retry, review slides, back to lessons).
@@ -152,12 +152,12 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               // Styling for the "frosted glass" results card.
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.1),
+                color: Colors.white.withValues(alpha:0.1),
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Colors.white.withOpacity(0.3)),
+                border: Border.all(color: Colors.white.withValues(alpha:0.3)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
+                    color: Colors.black.withValues(alpha:0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -208,7 +208,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                     // If passed, go back to lessons. If failed, offer retry.
                     onPressed: passed ? widget.onBackToLessons : widget.onRetry,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: passed ? Colors.blueAccent.withOpacity(0.9) : Colors.redAccent.withOpacity(0.9),
+                      backgroundColor: passed ? Colors.blueAccent.withValues(alpha:0.9) : Colors.redAccent.withValues(alpha:0.9),
                       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),

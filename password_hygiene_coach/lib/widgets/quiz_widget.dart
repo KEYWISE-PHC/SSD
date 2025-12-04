@@ -188,7 +188,7 @@ class _QuizWidgetState extends State<QuizWidget> {
               ElevatedButton(
                 onPressed: widget.onBackToContent,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent.withOpacity(0.9),
+                  backgroundColor: Colors.blueAccent.withValues(alpha:0.9),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 ),
                 child: const Text('Back to Lesson'),
@@ -220,12 +220,12 @@ class _QuizWidgetState extends State<QuizWidget> {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha:0.1),
               borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: Colors.white.withOpacity(0.3)),
+              border: Border.all(color: Colors.white.withValues(alpha:0.3)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: Colors.black.withValues(alpha:0.3),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),
@@ -290,7 +290,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                           duration: const Duration(milliseconds: 200),
                           decoration: BoxDecoration(
                             // Highlights the selected option.
-                            color: isSelected ? color.withOpacity(0.2) : Colors.white.withOpacity(0.1),
+                            color: isSelected ? color.withValues(alpha:0.2) : Colors.white.withValues(alpha:0.1),
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(
                               color: isSelected ? color : Colors.white24,
@@ -300,7 +300,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                               // Glow effect on selected/submitted option.
                               if (isSelected)
                                 BoxShadow(
-                                  color: color.withOpacity(0.3),
+                                  color: color.withValues(alpha:0.3),
                                   blurRadius: 6,
                                   offset: const Offset(0, 3),
                                 )
@@ -343,7 +343,7 @@ class _QuizWidgetState extends State<QuizWidget> {
                     // Change color from blue (submit) to orange (next/results) after submission.
                     backgroundColor: _isAnswerSubmitted
                         ? Colors.orangeAccent
-                        : Colors.blueAccent.withOpacity(0.9),
+                        : Colors.blueAccent.withValues(alpha:0.9),
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
