@@ -1,10 +1,15 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:logger/logger.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:password/models/lesson.dart';
+
+// creating a single logger instance
+final Logger logger = Logger();
+
 
 class DatabaseHelper {
   // Database constants
@@ -37,7 +42,7 @@ class DatabaseHelper {
       } catch (e) {
         // Optional: Log the error, but allow the app to continue 
         // (it might fail later if db is needed)
-        print("SQFLITE FFI INIT ERROR: $e"); 
+        logger.e('Failed to initialize sqflite FFI: $e');
       }
     }
 
@@ -55,10 +60,10 @@ class DatabaseHelper {
       version: _databaseVersion,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        print('Upgrading database from $oldVersion → $newVersion');
+        logger.i('Upgrading database from $oldVersion → $newVersion');
         await db.execute('DROP TABLE IF EXISTS $tableLessons');
         await _onCreate(db, newVersion);
-        print('Lessons table recreated successfully.');
+        logger.i('Lessons table recreated successfully.');
       },
     );
   }
@@ -608,18 +613,18 @@ Future<void> reseedLessonsIfEmpty() async {
   final count = Sqflite.firstIntValue(countResult) ?? 0;
 
     if (count == 0) {
-      print('Reseeding lessons table — empty database detected...');
+      logger.i('Reseeding lessons table — empty database detected...');
       await _insertInitialLessons(db);
-      print('Lessons reseeded successfully.');
+      logger.i('Lessons reseeded successfully.');
     } else {
-      print('Lessons table already populated ($count lessons).');
+      logger.i('Lessons table already populated ($count lessons).');
     }
   }
   Future<void> forceResetLessons() async {
     final db = await database;
     await db.delete(tableLessons);
     await _insertInitialLessons(db);
-    print('Lessons table forcibly reset and reseeded.');
+    logger.i('Lessons table forcibly reset and reseeded.');
   }
 
 
