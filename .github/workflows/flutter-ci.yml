@@ -22,7 +22,7 @@ jobs:
         working-directory: ./password_hygiene_coach
 
       - name: Security - Check outdated packages
-        run: flutter pub outdated --mode=null-safety
+        run: flutter pub outdated
         working-directory: ./password_hygiene_coach
 
       - name: Dart Static Analysis
