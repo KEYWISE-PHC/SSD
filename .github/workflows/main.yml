@@ -24,7 +24,7 @@ jobs:
 
       - name: 3. Install Trivy
         # Installs the security scanner used to generate the SBOM
-        uses: aquasecurity/setup-trivy@v2
+        uses: aquasecurity/setup-trivy@v2.2.0
 
       - name: 4. Run 'flutter pub get' to resolve dependencies
         # This is a critical step for Trivy to find the pubspec.lock file
