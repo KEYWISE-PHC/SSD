@@ -6,7 +6,7 @@ name: Generate and Upload SBOM
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
