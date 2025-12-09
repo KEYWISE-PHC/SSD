@@ -34,12 +34,14 @@ jobs:
 
       - name: 4. Run 'flutter pub get' to resolve dependencies
         # This is a critical step for Trivy to find the pubspec.lock file
+        working-directory: ./password_hygiene_coach
         run: flutter pub get
 
       # ----------------------------------------------------------------------
       # 5. Generate the Security-Enriched SBOM
       # ----------------------------------------------------------------------
       - name: 5. Generate CycloneDX SBOM with Vulns/Licenses
+        working-directory: ./password_hygiene_coach
         run: |
           trivy fs \
             --format cyclonedx \
