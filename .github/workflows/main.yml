@@ -1,8 +1,5 @@
 name: Generate and Upload SBOM
 
-# ----------------------------------------------------------------------
-# Trigger: Run the workflow on every push to the main branch.
-# ----------------------------------------------------------------------
 on:
   push:
     branches:
@@ -15,31 +12,25 @@ jobs:
 
     steps:
       - name: 1. Checkout Code
-        uses: actions/checkout@v4
+        uses: 'actions/checkout@v4'
 
       - name: 2. Set up Flutter
-        uses: subosito/flutter-action@v2
+        uses: 'subosito/flutter-action@v2'
         with:
-          flutter-version: '3.22.x'
+          flutter-version: '3.22.x' 
 
-      - name: 3. Install Trivy
-        # Installs the security scanner used to generate the SBOM
+      - name: 3. Manually Install Trivy
         run: |
           sudo apt-get update
           sudo apt-get install -y wget
           wget https://github.com/aquasecurity/trivy/releases/download/v0.53.0/trivy_0.53.0_Linux-64bit.deb
           sudo dpkg -i trivy_0.53.0_Linux-64bit.deb
-          # Verify installation
           trivy --version
-
+          
       - name: 4. Run 'flutter pub get' to resolve dependencies
-        # This is a critical step for Trivy to find the pubspec.lock file
-        working-directory: ./password_hygiene_coach
+        working-directory: ./password_hygiene_coach 
         run: flutter pub get
 
-      # ----------------------------------------------------------------------
-      # 5. Generate the Security-Enriched SBOM
-      # ----------------------------------------------------------------------
       - name: 5. Generate CycloneDX SBOM with Vulns/Licenses
         working-directory: ./password_hygiene_coach
         run: |
@@ -49,22 +40,13 @@ jobs:
             --output cyclonedx-sbom.json \
             .
       
-      # ----------------------------------------------------------------------
-      # 6. Extract Project Metadata for Dependency-Track
-      # ----------------------------------------------------------------------
       - name: 6. Get Project Metadata (Name & Version)
         id: metadata
         run: |
-          # The PROJECT_NAME used in Dependency-Track
           echo "PROJECT_NAME=password-hygiene-coach" >> $GITHUB_OUTPUT
-          # Use the short Git SHA for a unique, traceable project version
           echo "PROJECT_VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-      # ----------------------------------------------------------------------
-      # 7. Upload SBOM to Dependency-Track
-      # ----------------------------------------------------------------------
       - name: 7. Upload SBOM to Dependency-Track
-        # The curl command posts the SBOM file to the Dependency-Track API
         working-directory: ./password_hygiene_coach
         run: |
           curl -X POST "${{ secrets.DT_URL }}" \
