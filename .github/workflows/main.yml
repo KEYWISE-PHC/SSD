@@ -52,6 +52,7 @@ jobs:
       - name: 7. Upload SBOM to Dependency-Track
         working-directory: ./password_hygiene_coach
         run: |
+          echo "Uploading SBOM to: ${{ secrets.DT_URL }}"
           curl -X POST "${{ secrets.DT_URL }}" \
             -H "X-Api-Key: ${{ secrets.DT_API_KEY }}" \
             -F "autoCreate=true" \
