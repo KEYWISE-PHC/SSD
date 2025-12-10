@@ -13,12 +13,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Flutter
+    - name: Set up Flutter (correct SDK version)
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.24.0'
+        flutter-version: '3.38.4'
 
-    - name: Flutter pub get
+    - name: Disable Flutter analytics
+      run: flutter config --no-analytics
+
+    - name: Install dependencies
       working-directory: ./password_hygiene_coach
       run: flutter pub get
 
@@ -43,7 +46,6 @@ jobs:
         name: sbom
         path: ./password_hygiene_coach/sbom.json
 
-    - name: Vulnerability Scan on Codebase
+    - name: Vulnerability Scan (fail on CRITICAL only)
       working-directory: ./password_hygiene_coach
-      # Fail only on CRITICAL issues
       run: trivy fs --exit-code 1 --severity CRITICAL .
