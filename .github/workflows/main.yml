@@ -69,7 +69,9 @@ jobs:
             --out ../Documentation \
             --disableAssembly \
             --disableNodeJS \
-            --project password-hygiene-coach
+            --project password-hygiene-coach \
+            --nvdApiKey ${{ secrets.NVD_API_KEY }}
+
 
 
       # 9. Upload SBOM and Dependency-Check report as artifacts
