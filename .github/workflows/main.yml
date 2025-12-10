@@ -2,59 +2,35 @@ name: Flutter Security Scan
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
   pull_request:
-  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  flutter-security:
+  scan:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1. Checkout Code
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: 2. Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.x' # Using a version known to satisfy Dart SDK ^3.9.2
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.38.4'
 
-      - name: 3. Flutter Pub Get
-        # FIX 2: Specify working-directory to find pubspec.yaml
-        working-directory: ./password_hygiene_coach
-        run: flutter pub get
+    - name: Flutter pub get
+      working-directory: ./password_hygiene_coach
+      run: flutter pub get
 
-      - name: 4. Install CycloneDX BOM for Dart
-        run: |
-          dart pub global activate cyclonedx_pub
-          echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+    - name: Install Trivy
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
+        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" \
+          | sudo tee /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update
+        sudo apt-get install -y trivy
 
-
-      - name: 5. Generate SBOM
-        working-directory: ./password_hygiene_coach
-        # Use the correct executable name: cyclonedx_pub
-        run: dart pub global run cyclonedx_pub --output sbom.xml
-
-      - name: 6. Upload SBOM Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: sbom
-          path: ./password_hygiene_coach/sbom.xml
-
-
-      - name: 7. Install Trivy
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg
-          # Installing Trivy from its official repository
-          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
-          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" | \
-            sudo tee /etc/apt/sources.list.d/trivy.list
-          sudo apt-get update
-          sudo apt-get install -y trivy
-
-
-      - name: 8. Trivy Vulnerability Scan
-        working-directory: ./password_hygiene_coach
-        # Scan the file system and fail if CRITICAL vulnerabilities are found
-        run: trivy fs --exit-code 1 --severity CRITICAL
+    - name: Run vulnerability scan
+      working-directory: ./password_hygiene_coach
+      run: trivy fs --exit-code 1 --severity CRITICAL .
