@@ -15,22 +15,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Set up Flutter 3.22+ (Dart 3.9+)
+      # 2. Set up Flutter with correct version
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.38.4'
 
-      # 3. Disable Flutter analytics (optional)
-      - name: Disable Flutter Analytics
-        run: flutter config --no-analytics
-
-      # 4. Resolve Flutter dependencies
-      - name: Flutter Pub Get
-        working-directory: ./password_hygiene_coach
-        run: flutter pub get
-
-      # 5. Install Trivy manually
+      # 3. Install Trivy
       - name: Install Trivy
         run: |
           sudo apt-get update
@@ -38,6 +29,20 @@ jobs:
           wget https://github.com/aquasecurity/trivy/releases/download/v0.53.0/trivy_0.53.0_Linux-64bit.deb
           sudo dpkg -i trivy_0.53.0_Linux-64bit.deb
           trivy --version
+
+      # 4. Install Dependency-Check Core CLI
+      - name: Install Dependency-Check
+        run: |
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.0.2/dependency-check-8.0.2-release.zip
+          unzip dependency-check-8.0.2-release.zip -d $HOME/
+          mv $HOME/dependency-check-8.0.2 $HOME/dependency-check
+          chmod +x $HOME/dependency-check/bin/dependency-check.sh
+          echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
+
+      # 5. Resolve Flutter dependencies
+      - name: Flutter Pub Get
+        working-directory: ./password_hygiene_coach
+        run: flutter pub get
 
       # 6. Generate CycloneDX SBOM with Trivy
       - name: Generate CycloneDX SBOM
@@ -49,17 +54,7 @@ jobs:
             --output cyclonedx-sbom.json \
             .
 
-      # 7. Install OWASP Dependency-Check
-      - name: Install Dependency-Check
-        run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.0.2/dependency-check-8.0.2-release.zip
-          unzip dependency-check-8.0.2-release.zip -d $HOME/
-          # The unzip creates $HOME/dependency-check folder
-          chmod +x $HOME/dependency-check/bin/dependency-check.sh
-          echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
-          ls -l $HOME/dependency-check/bin
-
-      # 8. Run Dependency-Check scan
+      # 7. Run Dependency-Check scan with NVD API key
       - name: Run Dependency-Check
         working-directory: ./password_hygiene_coach
         env:
@@ -73,11 +68,8 @@ jobs:
             --disableNodeJS \
             --project password-hygiene-coach
 
-
-
-
-      # 9. Upload SBOM and Dependency-Check report as artifacts
-      - name: Upload Security Reports
+      # 8. Upload SBOM and Dependency-Check report as artifacts
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: security-reports
