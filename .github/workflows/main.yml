@@ -62,6 +62,8 @@ jobs:
       # 8. Run Dependency-Check scan
       - name: Run Dependency-Check
         working-directory: ./password_hygiene_coach
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
           dependency-check.sh \
             --scan . \
@@ -69,8 +71,8 @@ jobs:
             --out ../Documentation \
             --disableAssembly \
             --disableNodeJS \
-            --project password-hygiene-coach \
-            --nvdApiKey ${{ secrets.NVD_API_KEY }}
+            --project password-hygiene-coach
+
 
 
 
