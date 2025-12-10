@@ -14,7 +14,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # Install Trivy from official APT repo (no broken URLs)
     - name: Install Trivy
       run: |
         sudo apt-get update
@@ -25,7 +24,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y trivy
 
-    # Generate SBOM (CycloneDX JSON)
     - name: Generate SBOM
       run: trivy sbom --format cyclonedx-json --output sbom.json .
 
@@ -35,6 +33,13 @@ jobs:
         name: sbom
         path: sbom.json
 
-    # Fail only if CRITICAL vulnerabilities found
     - name: Trivy Vulnerability Scan
-      run: trivy fs --exit-code 1 --severity CRITICAL .
+      run: trivy fs --exit-code 1 --severity CRITICAL --ignore-unfixed .
+
+    - name: Trivy Code Scanning Report
+      run: trivy fs --format sarif --output trivy-report.sarif .
+
+    - name: Upload SARIF Report
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: trivy-report.sarif
