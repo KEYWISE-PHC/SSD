@@ -52,8 +52,8 @@ jobs:
       # 7. Install OWASP Dependency-Check
       - name: Install Dependency-Check
         run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.0.2/dependency-check-8.0.2-release.zip
-          unzip dependency-check-8.0.2-release.zip -d $HOME/
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v9.0.2/dependency-check-9.0.2-release.zip
+          unzip dependency-check-9.0.2-release.zip -d $HOME/
           # The unzip creates $HOME/dependency-check folder
           chmod +x $HOME/dependency-check/bin/dependency-check.sh
           echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
