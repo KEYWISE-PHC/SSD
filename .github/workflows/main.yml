@@ -67,6 +67,7 @@ jobs:
         run: |
           dependency-check.sh \
             --scan . \
+            --property nvd.api.key=${{ secrets.NVD_API_KEY }} \
             --format HTML \
             --out ../Documentation \
             --disableAssembly \
