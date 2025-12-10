@@ -1,87 +1,64 @@
-name: Flutter Security CI/CD
+name: Security Scan
 
 on:
   push:
-    branches:
-      - master
-  workflow_dispatch:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
 
 jobs:
-  security_scan:
+  security-scan:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      # 2. Set up Flutter 3.22+ (Dart 3.9+)
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.38.4'
+    - name: Generate SBOM (CycloneDX JSON)
+      run: |
+        trivy sbom --format cyclonedx-json --output sbom.json .
 
-      # 3. Disable Flutter analytics (optional)
-      - name: Disable Flutter Analytics
-        run: flutter config --no-analytics
+    - name: Upload SBOM artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: sbom
+        path: sbom.json
 
-      # 4. Resolve Flutter dependencies
-      - name: Flutter Pub Get
-        working-directory: ./password_hygiene_coach
-        run: flutter pub get
+    - name: Trivy Vulnerability Scan
+      run: |
+        trivy fs --exit-code 0 --format json --output trivy-report.json .
+        trivy fs --exit-code 1 .
 
-      # 5. Install Trivy manually
-      - name: Install Trivy
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget
-          wget https://github.com/aquasecurity/trivy/releases/download/v0.53.0/trivy_0.53.0_Linux-64bit.deb
-          sudo dpkg -i trivy_0.53.0_Linux-64bit.deb
-          trivy --version
+    - name: Upload Trivy report
+      uses: actions/upload-artifact@v4
+      with:
+        name: trivy-report
+        path: trivy-report.json
 
-      # 6. Generate CycloneDX SBOM with Trivy
-      - name: Generate CycloneDX SBOM
-        working-directory: ./password_hygiene_coach
-        run: |
-          trivy fs \
-            --format cyclonedx \
-            --scanners vuln,license \
-            --output cyclonedx-sbom.json \
-            .
+    - name: Install Dependency-Check
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        wget https://github.com/jeremylong/DependencyCheck/releases/download/v9.0.9/dependency-check-9.0.9-release.zip
+        unzip dependency-check-9.0.9-release.zip -d $HOME
+        echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
 
-      # 7. Install OWASP Dependency-Check
-      - name: Install Dependency-Check
-        run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v9.0.2/dependency-check-9.0.2-release.zip
-          unzip dependency-check-9.0.2-release.zip -d $HOME/
-          # The unzip creates $HOME/dependency-check folder
-          chmod +x $HOME/dependency-check/bin/dependency-check.sh
-          echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
-          ls -l $HOME/dependency-check/bin
+    - name: Dependency-Check Scan (offline mode)
+      env:
+        NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+      run: |
+        dependency-check.sh \
+          --noupdate \
+          --format "ALL" \
+          --project "MyApp" \
+          --scan . \
+          --out dependency-check-report
 
-      # 8. Run Dependency-Check scan
-      - name: Run Dependency-Check
-        working-directory: ./password_hygiene_coach
-        env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-        run: |
-          dependency-check.sh \
-            --scan . \
-            --nvdApiKey "${{ secrets.NVD_API_KEY }}" \
-            --format HTML \
-            --out ../Documentation \
-            --disableAssembly \
-            --disableNodeJS \
-            --project password-hygiene-coach
-
-
-
-
-      # 9. Upload SBOM and Dependency-Check report as artifacts
-      - name: Upload Security Reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-reports
-          path: |
-            ./password_hygiene_coach/cyclonedx-sbom.json
-            ./Documentation/dependency-check-report.html
+    - name: Upload Dependency-Check report
+      uses: actions/upload-artifact@v4
+      with:
+        name: dependency-check-report
+        path: dependency-check-report
