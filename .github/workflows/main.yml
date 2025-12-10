@@ -58,7 +58,7 @@ jobs:
 
       # 8. Upload SBOM and Dependency-Check report as artifacts
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-reports
           path: |
