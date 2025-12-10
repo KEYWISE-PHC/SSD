@@ -17,7 +17,15 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.38.4' 
+          flutter-version: '3.38.4'
+
+      - name: Disable Flutter Analytics
+        run: flutter config --no-analytics
+
+
+      - name: Flutter Pub Get
+        working-directory: ./password_hygiene_coach
+        run: flutter pub get
 
       - name: Install Trivy
         run: |
@@ -34,6 +42,7 @@ jobs:
             --format cyclonedx \
             --scanners vuln,license \
             --output cyclonedx-sbom.json \
+            .
 
       - name: Install Dependency-Check
         run: |
@@ -43,20 +52,6 @@ jobs:
           chmod +x $HOME/dependency-check/bin/dependency-check.sh
           echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
 
-      - name: Flutter Pub Get
-        working-directory: ./password_hygiene_coach
-        run: flutter pub get
-
-      - name: Generate CycloneDX SBOM
-        working-directory: ./password_hygiene_coach
-        run: |
-          trivy fs \
-            --format cyclonedx \
-            --scanners vuln,license \
-            --output cyclonedx-sbom.json \
-            .
-
-      # 7. Run Dependency-Check scan
       - name: Run Dependency-Check
         working-directory: ./password_hygiene_coach
         run: |
@@ -66,9 +61,7 @@ jobs:
             --out ../Documentation \
             --disableAssembly --disableNode --disablePython
 
-
-      # 8. Upload SBOM and Dependency-Check report as artifacts
-      - name: Upload Artifacts
+      - name: Upload Security Reports
         uses: actions/upload-artifact@v4
         with:
           name: security-reports
