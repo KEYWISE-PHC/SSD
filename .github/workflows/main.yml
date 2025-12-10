@@ -63,11 +63,13 @@ jobs:
       - name: Run Dependency-Check
         working-directory: ./password_hygiene_coach
         run: |
-          dependency-check.sh \
+            dependency-check.sh \
             --scan . \
             --format HTML \
             --out ../Documentation \
-            --disableAssembly --disableNode --disablePython
+            --disableAssembly \
+            --disableNodeJS \
+            --disablePython
 
       # 9. Upload SBOM and Dependency-Check report as artifacts
       - name: Upload Security Reports
