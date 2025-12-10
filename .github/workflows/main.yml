@@ -1,4 +1,4 @@
-name: Security Scan
+name: Flutter Security Scan
 
 on:
   push:
@@ -7,14 +7,22 @@ on:
 
 jobs:
   trivy-scan:
-    name: Trivy SBOM + Vulnerability Scan
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Install Trivy (Official Repo)
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.24.0'
+
+    - name: Flutter pub get
+      working-directory: ./password_hygiene_coach
+      run: flutter pub get
+
+    - name: Install Trivy
       run: |
         sudo apt-get update
         sudo apt-get install -y wget gnupg
@@ -25,17 +33,17 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y trivy
 
-    - name: Check Trivy version
-      run: trivy --version
-
-    - name: Generate SBOM
-      run: trivy sbom --format cyclonedx --output sbom.xml .
+    - name: Generate SBOM from pubspec.lock
+      working-directory: ./password_hygiene_coach
+      run: trivy sbom --format cyclonedx --scanners vuln --output sbom.json pubspec.lock
 
     - name: Upload SBOM Artifact
       uses: actions/upload-artifact@v4
       with:
         name: sbom
-        path: sbom.xml
+        path: ./password_hygiene_coach/sbom.json
 
-    - name: Trivy Vulnerability Scan
+    - name: Vulnerability Scan on Codebase
+      working-directory: ./password_hygiene_coach
+      # Fail only on CRITICAL issues
       run: trivy fs --exit-code 1 --severity CRITICAL .
