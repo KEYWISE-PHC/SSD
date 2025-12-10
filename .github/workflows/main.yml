@@ -14,24 +14,27 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-
+    # Install Trivy from official APT repo (no broken URLs)
     - name: Install Trivy
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget apt-transport-https gnupg lsb-release
-        wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.55.2_Linux-64bit.deb
-        sudo dpkg -i trivy_0.55.2_Linux-64bit.deb
+        sudo apt-get install -y wget gnupg
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
+        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" | \
+          sudo tee /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update
+        sudo apt-get install -y trivy
 
+    # Generate SBOM (CycloneDX JSON)
     - name: Generate SBOM
-      run: |
-        trivy sbom --format cyclonedx-json --output sbom.json .
+      run: trivy sbom --format cyclonedx-json --output sbom.json .
 
-    - name: Upload SBOM artifact
+    - name: Upload SBOM Artifact
       uses: actions/upload-artifact@v4
       with:
         name: sbom
         path: sbom.json
 
-    - name: Trivy Vulnerability Scan (Critical Only)
-      run: |
-        trivy fs --exit-code 1 --severity CRITICAL .
+    # Fail only if CRITICAL vulnerabilities found
+    - name: Trivy Vulnerability Scan
+      run: trivy fs --exit-code 1 --severity CRITICAL .
