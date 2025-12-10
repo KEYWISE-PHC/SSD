@@ -1,4 +1,4 @@
-name: Flutter Security Scan
+name: Flutter Security CI/CD
 
 on:
   push:
@@ -6,46 +6,50 @@ on:
   pull_request:
 
 jobs:
-  trivy-scan:
+  security_scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
 
-    - name: Set up Flutter (correct SDK version)
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.38.4'
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Disable Flutter analytics
-      run: flutter config --no-analytics
 
-    - name: Install dependencies
-      working-directory: ./password_hygiene_coach
-      run: flutter pub get
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.38.4'  # matches your Dart SDK requirement
 
-    - name: Install Trivy
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget gnupg
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
-          | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
-        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" \
-          | sudo tee /etc/apt/sources.list.d/trivy.list
-        sudo apt-get update
-        sudo apt-get install -y trivy
 
-    - name: Generate SBOM from pubspec.lock
-      working-directory: ./password_hygiene_coach
-      run: trivy sbom --format cyclonedx --scanners vuln --output sbom.json pubspec.lock
+      - name: Install Trivy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
+          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" | sudo tee /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install -y trivy
+          trivy --version
 
-    - name: Upload SBOM Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: sbom
-        path: ./password_hygiene_coach/sbom.json
+      - name: Flutter Pub Get
+        working-directory: ./password_hygiene_coach
+        run: flutter pub get
 
-    - name: Vulnerability Scan (fail on CRITICAL only)
-      working-directory: ./password_hygiene_coach
-      run: trivy fs --exit-code 1 --severity CRITICAL .
+
+      - name: Generate SBOM
+        working-directory: ./password_hygiene_coach
+        run: |
+          trivy sbom --format cyclonedx --output sbom.xml .
+
+      - name: Trivy Vulnerability Scan
+        working-directory: ./password_hygiene_coach
+        run: |
+          trivy fs --exit-code 1 --severity CRITICAL .
+
+
+      - name: Upload Security Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports
+          path: |
+            ./password_hygiene_coach/sbom.xml
