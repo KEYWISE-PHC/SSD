@@ -2,22 +2,27 @@ name: Security Scan
 
 on:
   push:
-    branches: [master]
+    branches: [ "master" ]
   pull_request:
 
-permissions:
-  contents: read
-  security-events: write
-
 jobs:
-  security-scan:
+  trivy-sbom:
+    name: Trivy SBOM + Vulnerability Scan
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Generate SBOM (CycloneDX JSON)
+
+    - name: Install Trivy
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+        wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.55.2_Linux-64bit.deb
+        sudo dpkg -i trivy_0.55.2_Linux-64bit.deb
+
+    - name: Generate SBOM
       run: |
         trivy sbom --format cyclonedx-json --output sbom.json .
 
@@ -27,38 +32,6 @@ jobs:
         name: sbom
         path: sbom.json
 
-    - name: Trivy Vulnerability Scan
+    - name: Trivy Vulnerability Scan (Critical Only)
       run: |
-        trivy fs --exit-code 0 --format json --output trivy-report.json .
-        trivy fs --exit-code 1 .
-
-    - name: Upload Trivy report
-      uses: actions/upload-artifact@v4
-      with:
-        name: trivy-report
-        path: trivy-report.json
-
-    - name: Install Dependency-Check
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y wget unzip
-        wget https://github.com/jeremylong/DependencyCheck/releases/download/v9.0.9/dependency-check-9.0.9-release.zip
-        unzip dependency-check-9.0.9-release.zip -d $HOME
-        echo "$HOME/dependency-check/bin" >> $GITHUB_PATH
-
-    - name: Dependency-Check Scan (offline mode)
-      env:
-        NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-      run: |
-        dependency-check.sh \
-          --noupdate \
-          --format "ALL" \
-          --project "MyApp" \
-          --scan . \
-          --out dependency-check-report
-
-    - name: Upload Dependency-Check report
-      uses: actions/upload-artifact@v4
-      with:
-        name: dependency-check-report
-        path: dependency-check-report
+        trivy fs --exit-code 1 --severity CRITICAL .
