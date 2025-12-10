@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  trivy-sbom:
+  trivy-scan:
     name: Trivy SBOM + Vulnerability Scan
     runs-on: ubuntu-latest
 
@@ -14,32 +14,28 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Install Trivy
+    - name: Install Trivy (Official Repo)
       run: |
         sudo apt-get update
         sudo apt-get install -y wget gnupg
-        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
-        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" | \
-          sudo tee /etc/apt/sources.list.d/trivy.list
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
+          | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
+        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" \
+          | sudo tee /etc/apt/sources.list.d/trivy.list
         sudo apt-get update
         sudo apt-get install -y trivy
 
+    - name: Check Trivy version
+      run: trivy --version
+
     - name: Generate SBOM
-      run: trivy sbom --format cyclonedx-json --output sbom.json .
+      run: trivy sbom --format cyclonedx --output sbom.xml .
 
     - name: Upload SBOM Artifact
       uses: actions/upload-artifact@v4
       with:
         name: sbom
-        path: sbom.json
+        path: sbom.xml
 
     - name: Trivy Vulnerability Scan
-      run: trivy fs --exit-code 1 --severity CRITICAL --ignore-unfixed .
-
-    - name: Trivy Code Scanning Report
-      run: trivy fs --format sarif --output trivy-report.sarif .
-
-    - name: Upload SARIF Report
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-        sarif_file: trivy-report.sarif
+      run: trivy fs --exit-code 1 --severity CRITICAL .
