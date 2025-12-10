@@ -1,4 +1,4 @@
-name: Generate and Upload SBOM
+name: Flutter Security CI/CD
 
 on:
   push:
@@ -7,22 +7,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  sbom_scan:
+  security_scan:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1. Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: 2. Set up Flutter (Dart ^3.9.2 compatible)
+      - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 3.38.4
+          flutter-version: '3.22.x'  # Latest Flutter with Dart 3.9+
 
-      - name: Disable Flutter Analytics
-        run: flutter config --no-analytics
-
-      - name: 3. Install Trivy Manually
+      - name: Install Trivy
         run: |
           sudo apt-get update
           sudo apt-get install -y wget
@@ -30,11 +27,17 @@ jobs:
           sudo dpkg -i trivy_0.53.0_Linux-64bit.deb
           trivy --version
 
-      - name: 4. Resolve Dependencies
+      - name: Install Dependency-Check
+        run: |
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.0.2/dependency-check-8.0.2-release.zip
+          unzip dependency-check-8.0.2-release.zip -d $HOME/dependency-check
+          echo "$HOME/dependency-check/bin/dependency-check.sh"
+
+      - name: Flutter Pub Get
         working-directory: ./password_hygiene_coach
         run: flutter pub get
 
-      - name: 5. Generate CycloneDX SBOM with Vulnerabilities & Licenses
+      - name: Generate CycloneDX SBOM
         working-directory: ./password_hygiene_coach
         run: |
           trivy fs \
@@ -43,19 +46,21 @@ jobs:
             --output cyclonedx-sbom.json \
             .
 
-      - name: 6. Extract Project Metadata From git
-        id: metadata
-        run: |
-          echo "PROJECT_NAME=password-hygiene-coach" >> $GITHUB_OUTPUT
-          echo "PROJECT_VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-
-      - name: 7. Upload SBOM to Dependency-Track
+      # 7. Run Dependency-Check scan
+      - name: Run Dependency-Check
         working-directory: ./password_hygiene_coach
         run: |
-          echo "Uploading SBOM to: ${{ secrets.DT_URL }}"
-          curl -X POST "${{ secrets.DT_URL }}" \
-            -H "X-Api-Key: ${{ secrets.DT_API_KEY }}" \
-            -F "autoCreate=true" \
-            -F "projectName=${{ steps.metadata.outputs.PROJECT_NAME }}" \
-            -F "projectVersion=${{ steps.metadata.outputs.PROJECT_VERSION }}" \
-            -F "bom=@cyclonedx-sbom.json"
+          $HOME/dependency-check/bin/dependency-check.sh \
+            --scan . \
+            --format HTML \
+            --out ../Documentation \
+            --disableAssembly --disableNode --disablePython
+
+      # 8. Upload SBOM and Dependency-Check report as artifacts
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-reports
+          path: |
+            ./password_hygiene_coach/cyclonedx-sbom.json
+            ./Documentation/dependency-check-report.html
