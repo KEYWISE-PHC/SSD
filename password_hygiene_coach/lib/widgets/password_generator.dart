@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../utils/password_utils.dart';
+// import '../screens/home_screen.dart';
 
 class PasswordGeneratorWidget extends StatefulWidget {
   const PasswordGeneratorWidget({super.key});
@@ -66,6 +67,7 @@ class _PasswordGeneratorWidgetState extends State<PasswordGeneratorWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      // color: AppColors.lightTurquoise,
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       margin: const EdgeInsets.all(16),

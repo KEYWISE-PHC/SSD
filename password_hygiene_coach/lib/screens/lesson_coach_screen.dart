@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart'; // Core Flutter framework.
 import 'package:password/services/database_helper.dart'; // Service class for database operations (e.g., SQLite).
 import 'package:password/models/lesson.dart'; // Data model for a single lesson.
+import '../utils/app_colours.dart';
 
 // Imports for custom widgets, using prefixes to prevent naming conflicts.
 import 'package:password/widgets/lesson_selection_list.dart' as selection_list;
@@ -187,7 +188,7 @@ class _LessonCoachScreenState extends State<LessonCoachScreen> {
       appBar: AppBar(
         title:
             Text(isLessonSelected ? _selectedLesson!.title : 'Lesson Contents'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: AppColors.navy,
         foregroundColor: Colors.white,
         // Shows a back button if a lesson is selected, otherwise null (no back button).
         leading: isLessonSelected

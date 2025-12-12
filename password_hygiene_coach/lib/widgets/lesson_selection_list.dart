@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'; // Core Flutter material design library.
 import '../models/lesson.dart'; // Import the Lesson data model.
+import '../utils/app_colours.dart';
 
 /// --- LESSON SELECTION LIST WITH THEMED CARDS ---
 /// A stateless widget that displays all available lessons in a themed, scrollable list.
@@ -23,7 +24,7 @@ class LessonSelectionList extends StatelessWidget {
       decoration: const BoxDecoration(
         // Applies a blue/purple linear gradient for a modern, high-contrast look.
         gradient: LinearGradient(
-          colors: [Color(0xFF2A2A72), Color(0xFF009FFD)], // Dark to Light Blue/Purple
+          colors: [Color(0xFF00254D), Color(0xFF00A6B4)], // Dark to Light Blue/Purple
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -63,7 +64,7 @@ class LessonSelectionList extends StatelessWidget {
                     // Icon representing the lesson, styled with orangeAccent.
                     Icon(
                       lesson.iconData,
-                      color: Colors.orangeAccent,
+                      color: AppColors.beige,
                       size: 36,
                     ),
                     const SizedBox(width: 16),

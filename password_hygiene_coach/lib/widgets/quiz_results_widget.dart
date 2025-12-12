@@ -137,7 +137,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
         Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF2A2A72), Color(0xFF009FFD)],
+              colors: [Color(0xFF00254D), Color(0xFF00A6B4)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
