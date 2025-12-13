@@ -156,11 +156,11 @@ class _StrengthFeedbackScreenState extends State<StrengthFeedbackScreen> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.96),
+                    color: Colors.white.withValues(alpha: 0.96),
                     borderRadius: BorderRadius.circular(26),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.18),
+                        color: Colors.black.withValues(alpha: 0.18),
                         blurRadius: 18,
                         offset: const Offset(0, 10),
                       ),
@@ -214,7 +214,7 @@ class _StrengthFeedbackScreenState extends State<StrengthFeedbackScreen> {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
           borderSide: BorderSide(
-            color: AppColors.brightTeal.withOpacity(0.6),
+            color: AppColors.brightTeal.withValues(alpha: 0.6),
             width: 1.4,
           ),
         ),

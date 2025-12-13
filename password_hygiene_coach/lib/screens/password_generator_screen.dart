@@ -21,7 +21,7 @@ class PasswordGeneratorScreen extends StatelessWidget {
           activeTrackColor: AppColors.brightTeal,
           inactiveTrackColor: Colors.white54,
           thumbColor: AppColors.brightTeal,
-          overlayColor: AppColors.brightTeal.withOpacity(0.2),
+          overlayColor: AppColors.brightTeal.withValues(alpha: 0.2),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
