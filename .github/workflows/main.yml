@@ -1,0 +1,36 @@
+name: Flutter Security Scan
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.38.4'
+
+    - name: Flutter pub get
+      working-directory: ./password_hygiene_coach
+      run: flutter pub get
+
+    - name: Install Trivy
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
+        echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb noble main" \
+          | sudo tee /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update
+        sudo apt-get install -y trivy
+
+    - name: Run vulnerability scan
+      working-directory: ./password_hygiene_coach
+      run: trivy fs --exit-code 1 --severity CRITICAL .
