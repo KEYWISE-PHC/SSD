@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'; // Core Flutter material design library.
 import '../models/lesson.dart'; // Import the Lesson data model.
+import '../utils/app_colours.dart';
 
 /// --- LESSON SELECTION LIST WITH THEMED CARDS ---
 /// A stateless widget that displays all available lessons in a themed, scrollable list.
@@ -23,7 +24,7 @@ class LessonSelectionList extends StatelessWidget {
       decoration: const BoxDecoration(
         // Applies a blue/purple linear gradient for a modern, high-contrast look.
         gradient: LinearGradient(
-          colors: [Color(0xFF2A2A72), Color(0xFF009FFD)], // Dark to Light Blue/Purple
+          colors: [Color(0xFF00254D), Color(0xFF00A6B4)], // Dark to Light Blue/Purple
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -44,14 +45,14 @@ class LessonSelectionList extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                 decoration: BoxDecoration(
                   // 'Frosted glass' effect: partially transparent white color.
-                  color: Colors.white.withOpacity(0.1), 
+                  color: Colors.white.withValues(alpha: 0.1), 
                   borderRadius: BorderRadius.circular(20),
                   // Slight white border to enhance the "lifted" look.
-                  border: Border.all(color: Colors.white.withOpacity(0.3)),
+                  border: Border.all(color: Colors.white.withValues(alpha:0.3)),
                   boxShadow: [
                     // Shadow for depth and separation from the gradient background.
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withValues(alpha:0.3),
                       blurRadius: 15,
                       offset: const Offset(0, 6),
                     ),
@@ -63,7 +64,7 @@ class LessonSelectionList extends StatelessWidget {
                     // Icon representing the lesson, styled with orangeAccent.
                     Icon(
                       lesson.iconData,
-                      color: Colors.orangeAccent,
+                      color: AppColors.beige,
                       size: 36,
                     ),
                     const SizedBox(width: 16),

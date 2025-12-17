@@ -1,0 +1,38 @@
+name: Flutter Secure CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Flutter (beta)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'beta'
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./password_hygiene_coach
+
+      - name: Security - Check outdated packages
+        run: flutter pub outdated
+        working-directory: ./password_hygiene_coach
+
+      - name: Dart Static Analysis
+        run: flutter analyze
+        working-directory: ./password_hygiene_coach
+
+      - name: Run unit tests
+        run: flutter test
+        working-directory: ./password_hygiene_coach
+
+      - name: Build APK
+        run: flutter build apk --release
+        working-directory: ./password_hygiene_coach

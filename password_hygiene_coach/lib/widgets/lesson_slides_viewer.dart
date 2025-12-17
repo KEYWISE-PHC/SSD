@@ -1,6 +1,7 @@
 import 'dart:ui'; // Import for ImageFilter (used for the frosted glass blur effect).
 import 'package:flutter/material.dart'; // Core Flutter material design library.
 import '../models/lesson.dart'; // Import the Lesson data model.
+import '../utils/app_colours.dart';
 
 /// A StatefulWidget that presents the content of a lesson (slides) using a PageView.
 class LessonSlidesViewer extends StatefulWidget {
@@ -56,7 +57,7 @@ class _LessonSlidesViewerState extends State<LessonSlidesViewer> {
           decoration: const BoxDecoration(
             // Uses the same background gradient as the selection list for visual consistency.
             gradient: LinearGradient(
-              colors: [Color(0xFF2A2A72), Color(0xFF009FFD)],
+              colors: [Color(0xFF00254D), Color(0xFF00A6B4)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -110,12 +111,12 @@ class _LessonSlidesViewerState extends State<LessonSlidesViewer> {
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     // The 'frosted glass' card design starts here:
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha:0.1),
                     borderRadius: BorderRadius.circular(24),
-                    border: Border.all(color: Colors.white.withOpacity(0.3)),
+                    border: Border.all(color: Colors.white.withValues(alpha:0.3)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black.withValues(alpha:0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
                       ),
@@ -188,13 +189,13 @@ class _LessonSlidesViewerState extends State<LessonSlidesViewer> {
                 decoration: BoxDecoration(
                   color: _currentPage == index
                       ? Colors.white // Active dot is solid white.
-                      : Colors.white.withOpacity(0.5), // Inactive is semi-transparent.
+                      : Colors.white.withValues(alpha: 0.5), // Inactive is semi-transparent.
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     // Glow effect for the active dot.
                     if (_currentPage == index)
                       BoxShadow(
-                        color: Colors.white.withOpacity(0.6),
+                        color: Colors.white.withValues(alpha: 0.6),
                         blurRadius: 6,
                         spreadRadius: 1,
                       ),
@@ -221,7 +222,7 @@ class _LessonSlidesViewerState extends State<LessonSlidesViewer> {
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16)),
-                    backgroundColor: Colors.orangeAccent.withOpacity(0.9),
+                    backgroundColor: AppColors.beige.withValues(alpha:0.9),
                     foregroundColor: Colors.white,
                     textStyle: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.bold),

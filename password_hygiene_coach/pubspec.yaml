@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path: ^1.9.0
+  logger: ^2.0.2
 
   cupertino_icons: ^1.0.8
   sqflite: ^2.3.0

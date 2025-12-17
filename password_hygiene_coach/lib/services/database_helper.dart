@@ -1,10 +1,15 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:logger/logger.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:password/models/lesson.dart';
+
+// creating a single logger instance
+final Logger logger = Logger();
+
 
 class DatabaseHelper {
   // Database constants
@@ -37,7 +42,7 @@ class DatabaseHelper {
       } catch (e) {
         // Optional: Log the error, but allow the app to continue 
         // (it might fail later if db is needed)
-        print("SQFLITE FFI INIT ERROR: $e"); 
+        logger.e('Failed to initialize sqflite FFI: $e');
       }
     }
 
@@ -55,10 +60,10 @@ class DatabaseHelper {
       version: _databaseVersion,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
-        print('Upgrading database from $oldVersion → $newVersion');
+        logger.i('Upgrading database from $oldVersion → $newVersion');
         await db.execute('DROP TABLE IF EXISTS $tableLessons');
         await _onCreate(db, newVersion);
-        print('Lessons table recreated successfully.');
+        logger.i('Lessons table recreated successfully.');
       },
     );
   }
@@ -135,11 +140,11 @@ class DatabaseHelper {
         columnTitle: "2. Core Principles of a Strong Password",
         columnIconName: "verified_user",
         columnContentJson: jsonEncode([
-          "A strong password should be hard to guess — avoid 'password' or '123456'.",
-          "* **Length:** Minimum 12 characters (14+ is better).",
-          "* **Complexity:** Mix of letters, numbers, and symbols.",
-          "* **Uniqueness:** Never reuse passwords across sites.",
-          "* **Privacy:** Avoid personal info (like birthdates)."
+          "**Why Strong Passwords Matter** A strong password should be hard to guess — avoid 'password' or '123456'.",
+          "**Length: Go Long** Minimum 12 characters (14+ is better).",
+          "**Complexity: Mix It Up** Use a mix of letters, numbers, and symbols.",
+          "**Uniqueness: One Per Account** Never reuse passwords across sites.",
+          "**Privacy: Don’t Overshare** Avoid personal info like birthdates or names."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -182,10 +187,10 @@ class DatabaseHelper {
         columnTitle: "3. Password Managers: Your Security Vault",
         columnIconName: "lock_open",
         columnContentJson: jsonEncode([
-          "Password managers store all your credentials securely, behind one strong **Master Password**.",
-          "* Generate long, random passwords automatically.",
-          "* Enforce uniqueness across sites.",
-          "* Auto-fill only on legitimate domains."
+          "**What Is a Password Manager?** Password managers store all your credentials securely behind one strong Master Password.",
+          "**Stronger Passwords With One Click** They generate long, random passwords automatically.",
+          "**Unique Passwords Everywhere** They enforce unique passwords across all sites.",
+          "**Safer Sign-Ins** They only auto-fill on legitimate domains, helping you avoid phishing sites."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -232,11 +237,11 @@ class DatabaseHelper {
         columnTitle: "4. Deep Dive into Multi-Factor Authentication (MFA)",
         columnIconName: "security",
         columnContentJson: jsonEncode([
-          "MFA adds a second layer of defense.",
-          " Something you know (password).",
-          " Something you have (phone, key).",
-          " Something you are (fingerprint, face).",
-          "Use authenticator apps or hardware keys — they’re safer than SMS."
+          "**What Is MFA?** Multi-factor authentication (MFA) adds a second layer of defense on top of your password.",
+          "**Something You Know** A password or PIN is something you know.",
+          "**Something You Have** A phone, authenticator app, or hardware key is something you have.",
+          "**Something You Are** Fingerprint, face, or other biometrics are something you are.",
+          "**Best MFA Choices** Use authenticator apps or hardware keys — they’re safer than SMS codes."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -274,8 +279,8 @@ class DatabaseHelper {
         columnTitle: "5. Passkeys: The Password Replacement",
         columnIconName: "fingerprint",
         columnContentJson: jsonEncode([
-          "Passkeys replace passwords using cryptography stored on your device.",
-          "They’re phishing-resistant, easy to use, and secure — they never leave your device."
+          "**What Are Passkeys?** Passkeys replace passwords using cryptographic keys stored securely on your device.",
+          "**Why Passkeys Are Safer** They’re phishing-resistant, easy to use, and the secret never leaves your device."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -313,11 +318,11 @@ class DatabaseHelper {
         columnTitle: "6. Recognizing Scams: Phishing, Smishing, Vishing",
         columnIconName: "alternate_email",
         columnContentJson: jsonEncode([
-          "Social engineering tricks you into giving info!",
-          "**Phishing:** via Email.",
-          " **Smishing:** via SMS.",
-          " **Vishing:** via Phone calls.",
-          "Red Flags : Urgency, bad grammar, generic greetings."
+          "**Social Engineering 101** Social engineering tricks you into giving away information or access.",
+          "**Phishing (Email)** Phishing attacks arrive via email and try to get you to click malicious links.",
+          "**Smishing (SMS)** Smishing uses text messages to trick you into sharing data or clicking bad links.",
+          "**Vishing (Voice)** Vishing uses fake phone calls to pressure you into sharing information.",
+          "**Common Red Flags** Urgency, threats, bad grammar, and generic greetings are classic warning signs."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -356,10 +361,10 @@ class DatabaseHelper {
         columnTitle: "7. The Anatomy of a Data Breach",
         columnIconName: "cloud_off",
         columnContentJson: jsonEncode([
-          "Data breaches expose passwords, emails, and more.",
-          "After a breach: Change breached password.",
-          " Update reused passwords.",
-          " Monitor accounts via 'Have I Been Pwned'."
+          "**What Is a Data Breach?** Data breaches expose passwords, emails, and other personal data.",
+          "**Immediate Response** After a breach, change the breached password right away.",
+          "**Fix Reused Passwords** Update any other accounts where you reused that password.",
+          "**Check Your Exposure** Use services like 'Have I Been Pwned' to see if your data appeared in known breaches."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -397,8 +402,9 @@ class DatabaseHelper {
         columnTitle: "8. Account Recovery & Security Questions",
         columnIconName: "restore",
         columnContentJson: jsonEncode([
-          "Security questions are often weak points.",
-          "Use **fake/random answers** stored in your password manager."
+          "**Why Recovery Matters** Security questions can be weak links in your account recovery.",
+          "**Use Fake Answers** Use fake or random answers that only you know and store them in your password manager.",
+          "**Keep Attackers Guessing** Avoid real, searchable information like schools, pets, or family names."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -436,9 +442,9 @@ class DatabaseHelper {
         columnTitle: "9. Public Wi-Fi and VPNs",
         columnIconName: "wifi_off",
         columnContentJson: jsonEncode([
-          "Public Wi-Fi is insecure and prone to MITM attacks.",
-          "Use a **VPN** to encrypt traffic and stay private.",
-          "Activate VPN on public networks."
+          "**Why Public Wi-Fi Is Risky** Public Wi-Fi is insecure and prone to man-in-the-middle (MITM) attacks.",
+          "**How a VPN Helps** A VPN encrypts your traffic so snoopers on the same network can’t read it.",
+          "**When to Use a VPN** Turn it on whenever you use public or unsecured Wi-Fi."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -476,8 +482,9 @@ class DatabaseHelper {
         columnTitle: "10. Device Security Foundations",
         columnIconName: "phone_android",
         columnContentJson: jsonEncode([
-          "Your device is the gateway to your accounts.",
-          "Always lock your screen, enable encryption, and install updates."
+          "**Devices as Gateways** Your device is the gateway to your accounts and data.",
+          "**Lock the Screen** Always use a PIN, password, or biometrics to lock your device.",
+          "**Stay Updated & Encrypted** Enable encryption and install OS and app updates promptly."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -515,9 +522,9 @@ class DatabaseHelper {
         columnTitle: "11. Recognizing Secure Websites",
         columnIconName: "web",
         columnContentJson: jsonEncode([
-          "Check HTTPS in URL (not HTTP).",
-          " Padlock icon with valid certificate.",
-          "Verify correct domain spelling."
+          "**Look for HTTPS** Only log in when the URL starts with https://, not http://.",
+          "**Padlock Icon Check** A padlock icon with a valid certificate means the connection is encrypted.",
+          "**Spot Fake Domains** Carefully check the domain spelling to avoid look-alike phishing sites."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -555,10 +562,10 @@ class DatabaseHelper {
         columnTitle: "12. Password Expiration: The Myth",
         columnIconName: "history_toggle_off",
         columnContentJson: jsonEncode([
-          "Old advice said to change passwords often — now outdated.",
-          "* Change password only if compromised.",
-          "* Frequent changes lead to weak patterns.",
-          "* Focus on uniqueness and strength."
+          "**Old Advice vs New Reality** Old advice said to change passwords often — this is now outdated.",
+          "**When to Change** Change a strong password only if it’s compromised or at high risk.",
+          "**Why Forced Rotation Backfires** Frequent forced changes lead to weak, predictable patterns.",
+          "**What to Focus On Instead** Prioritize uniqueness, strength, and enabling MFA over frequent changes."
         ]),
         columnQuizDataJson: jsonEncode([
           {
@@ -608,18 +615,18 @@ Future<void> reseedLessonsIfEmpty() async {
   final count = Sqflite.firstIntValue(countResult) ?? 0;
 
     if (count == 0) {
-      print('Reseeding lessons table — empty database detected...');
+      logger.i('Reseeding lessons table — empty database detected...');
       await _insertInitialLessons(db);
-      print('Lessons reseeded successfully.');
+      logger.i('Lessons reseeded successfully.');
     } else {
-      print('Lessons table already populated ($count lessons).');
+      logger.i('Lessons table already populated ($count lessons).');
     }
   }
   Future<void> forceResetLessons() async {
     final db = await database;
     await db.delete(tableLessons);
     await _insertInitialLessons(db);
-    print('Lessons table forcibly reset and reseeded.');
+    logger.i('Lessons table forcibly reset and reseeded.');
   }
 
 
